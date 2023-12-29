@@ -6,28 +6,28 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Connexion | App</title>
+    <title>Connexion | Mapollon</title>
+    <link rel="stylesheet" href="assets/css/auth.css" />
     <link rel="stylesheet" href="assets/css/login.css" />
 </head>
 
 <body>
-    <div class="card">
+    <a href="index.php" class="previous">
+        <img src="assets/icons/previous.svg" alt="<=" />
+    </a>
+    <div class="container">
         <h1>Connexion</h1>
         <form action="index.php?action=login" method="post">
             <div class="input-group">
                 <label for="user_email">Email</label>
-                <input type="email" name="user_email" id="user_email" required />
+                <input type="email" name="user_email" id="user_email" />
             </div>
             <div class="input-group">
                 <label for="user_pwd">Mot de passe</label>
-                <input type="password" name="user_pwd" id="user_pwd" required />
+                <input type="password" name="user_pwd" id="user_pwd" />
             </div>
-            <input class="btn" type="submit" name="submit" value="Me connecter" />
+            <input class="btn primary center" type="submit" value="Se connecter" />
         </form>
-        <p class="small">
-            Vous êtes nouveau sur l'appli ?<br />
-            <a href="index.php?action=register">Créer un compte</a>
-        </p>
     </div>
 </body>
 
