@@ -27,11 +27,12 @@ body {
     width: 90%;
     margin: 0 auto;
 }
-.logo {
+.mapollon {
     width: 36px;
     height: 36px;
 }
 .filters {
+    cursor: pointer;
     width: 36px;
     height: 36px;
     display: flex;

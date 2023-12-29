@@ -11,7 +11,7 @@
 
 <body>
     <div class="top-bar">
-        <img src="assets/icons/logo.svg" alt="Map" class="logo" />
+        <div class="logo"><img src="assets/icons/logo.svg" alt="Map" class="mapollon" /></div>
         <div class="filters">
             <img src="assets/icons/sliders.svg" alt="Filter" class="top_icon" />
         </div>
@@ -21,7 +21,7 @@
     </div>
     <?php include 'assets/includes/tab-bar.php'; ?>
 
-    <!-- <script src="assets/js/map.js"></script> -->
+    <script src="assets/js/map.js"></script>
     <script src="assets/js/tab-bar.js"></script>
 </body>
 
