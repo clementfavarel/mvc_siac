@@ -17,12 +17,12 @@
         </div>
     </div>
     <div id="map">
-        <img src="assets/img/plan.png" alt="plan" />
+        <img class="map-img" src="assets/img/plan.png" alt="plan" />
     </div>
     <?php include 'assets/includes/tab-bar.php'; ?>
 
+    <!-- <script src="assets/js/map.js"></script> -->
     <script src="assets/js/tab-bar.js"></script>
-    <script src="assets/js/map.js"></script>
 </body>
 
 </html>

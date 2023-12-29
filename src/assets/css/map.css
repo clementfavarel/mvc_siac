@@ -44,7 +44,7 @@ body {
     align-items: center;
     justify-content: center;
 }
-img {
+.map-img {
     width: 95%;
     max-width: fit-content;
     object-fit: contain;
