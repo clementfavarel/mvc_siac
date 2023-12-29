@@ -15,7 +15,7 @@ class User
 
     public function authenticateUser($user_email, $user_pwd)
     {
-        // Example: Authenticate user
+        // Authenticate user
         $query = "SELECT * FROM users WHERE user_email = :user_email";
         $this->db->query($query);
         $this->db->bind(':user_email', $user_email);
@@ -30,18 +30,20 @@ class User
         return null;
     }
 
-    public function createUser($user_name, $user_email, $user_pwd)
+    public function createUser($user_firstname, $user_lastname, $user_job, $user_email, $user_birth_date, $user_pwd)
     {
-        // Example: Hash the password
+        // Hash the password
         $hashedPassword = password_hash($user_pwd, PASSWORD_DEFAULT);
 
-        // Example: Create a new user in the database
-        $query = "INSERT INTO users (user_name, user_email, user_pwd) VALUES (:user_name, :user_email, :user_pwd)";
+        // Create a new user in the database
+        $query = "INSERT INTO users (user_firstname, user_lastname, user_job, user_email, user_birth_date, user_pwd) VALUES (:user_firstname, :user_lastname, :user_job, :user_email, :user_birth_date, :user_pwd)";
         $this->db->query($query);
-        $this->db->bind(':user_name', $user_name);
+        $this->db->bind(':user_firstname', $user_firstname);
+        $this->db->bind(':user_lastname', $user_lastname);
+        $this->db->bind(':user_job', $user_job);
         $this->db->bind(':user_email', $user_email);
+        $this->db->bind(':user_birth_date', $user_birth_date);
         $this->db->bind(':user_pwd', $hashedPassword);
-
         $this->db->execute();
 
         // Fetch the created user to return its details
@@ -51,7 +53,7 @@ class User
 
     public function getUserById($userId)
     {
-        // Example: Get user details by ID
+        // Get user details by ID
         $query = "SELECT * FROM users WHERE user_id = :user_id";
         $this->db->query($query);
         $this->db->bind(':user_id', $userId);
@@ -61,7 +63,7 @@ class User
 
     public function getAllUsers()
     {
-        // Example: Get all users
+        // Get all users
         $query = "SELECT * FROM users";
         $this->db->query($query);
 

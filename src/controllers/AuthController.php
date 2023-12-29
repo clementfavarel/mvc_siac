@@ -47,7 +47,7 @@ class AuthController
 
     private function handleLogin()
     {
-        // Example: Validate user input
+        // Validate user input
         $user_email = $_POST['user_email'];
         $user_pwd = $_POST['user_pwd'];
 
@@ -57,11 +57,11 @@ class AuthController
             exit();
         }
 
-        // Example: Authenticate user
+        // Authenticate user
         $authenticatedUser = $this->userModel->authenticateUser($user_email, $user_pwd);
 
         if ($authenticatedUser) {
-            // Example: Set session variables
+            // Set session variables
             $_SESSION['user_id'] = $authenticatedUser['user_id'];
             $_SESSION['user_role'] = $authenticatedUser['user_role'];
 
@@ -82,22 +82,43 @@ class AuthController
 
     private function handleRegister()
     {
-        // Example: Validate user input
-        $user_name = $_POST['user_name'];
+        // Validate user input
+        $user_firstname = $_POST['user_firstname'];
+        $user_lastname = $_POST['user_lastname'];
+        $user_job = $_POST['user_job'];
         $user_email = $_POST['user_email'];
+        $day = $_POST['dd'];
+        $month = $_POST['mm'];
+        $year = $_POST['yyyy'];
         $user_pwd = $_POST['user_pwd'];
+        $user_pwd_confirm = $_POST['user_pwd_confirm'];
 
-        if (empty($user_name) || empty($user_email) || empty($user_pwd)) {
+        if (empty($user_firstname) || empty($user_lastname) || empty($user_job) || empty($user_email) || empty($day) || empty($month) || empty($year) || empty($user_pwd) || empty($user_pwd_confirm)) {
             // Redirect with an error message
             header('Location: index.php?action=register&error=Please fill in all fields');
             exit();
         }
 
-        // Example: Create a new user in the database
-        $createdUser = $this->userModel->createUser($user_name, $user_email, $user_pwd);
+        if (!filter_var($user_email, FILTER_VALIDATE_EMAIL)) {
+            // Redirect with an error message
+            header('Location: index.php?action=register&error=Invalid email');
+            exit();
+        }
+
+        if ($user_pwd !== $user_pwd_confirm) {
+            // Redirect with an error message
+            header('Location: index.php?action=register&error=Passwords do not match');
+            exit();
+        }
+
+        // Format the date of birth
+        $user_birth_date = $year . '-' . $month . '-' . $day;
+
+        // Create a new user in the database
+        $createdUser = $this->userModel->createUser($user_firstname, $user_lastname, $user_job, $user_email, $user_birth_date, $user_pwd);
 
         if ($createdUser) {
-            // Example: Set session variables
+            // Set session variables
             $_SESSION['user_id'] = $createdUser['user_id'];
             $_SESSION['user_role'] = $createdUser['user_role'];
 
@@ -113,13 +134,13 @@ class AuthController
 
     public function showUnauthorized()
     {
-        // Example: Display an error page
+        // Display an error page
         include(__DIR__ . '/../views/error/401.php');
     }
 
     public function showError()
     {
-        // Example: Display an error page
+        // Display an error page
         include(__DIR__ . '/../views/error/404.php');
     }
     // Add other methods for handling additional authentication-related actions, if needed
