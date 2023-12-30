@@ -13,6 +13,7 @@ class Db
         // Establish a database connection
         $this->db = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);
         $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $this->db->exec('SET NAMES utf8');
     }
 
     public function query($sql)
