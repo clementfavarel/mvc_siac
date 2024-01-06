@@ -27,6 +27,11 @@ body {
     width: 90%;
     margin: 0 auto;
 }
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .mapollon {
     width: 36px;
     height: 36px;
