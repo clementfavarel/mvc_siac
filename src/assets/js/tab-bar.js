@@ -24,7 +24,8 @@ function updateTabImages(currentAction) {
         };
 
         // Update the tab image based on the current action
-        var iconName = textToIconMap[tabText.textContent];
+        var iconName = textToIconMap[tabText.textContent.trim()];
+
         var iconSrc =
             currentAction === iconName
                 ? "assets/icons/" + iconName + "-on.svg"
@@ -32,6 +33,9 @@ function updateTabImages(currentAction) {
 
         // Update tab icon source
         tabIcon.src = iconSrc;
+
+        // Make sure the image has an alt attribute for accessibility
+        tabIcon.alt = iconName;
 
         // You can also update other styles or classes based on the current action if needed
     });

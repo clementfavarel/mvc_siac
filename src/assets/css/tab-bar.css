@@ -29,6 +29,9 @@
     color: #666;
     text-decoration: none;
 }
+.tab_label {
+    text-align: center;
+}
 
 /* on Tablet */
 @media (min-width: 768px) {
