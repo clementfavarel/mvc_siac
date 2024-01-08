@@ -143,5 +143,15 @@ class AuthController
         // Display an error page
         include(__DIR__ . '/../views/error/404.php');
     }
+
+    public function logOut()
+    {
+        // Destroy the session
+        session_destroy();
+
+        // Redirect to the landing page
+        header('Location: index.php');
+        exit();
+    }
     // Add other methods for handling additional authentication-related actions, if needed
 }

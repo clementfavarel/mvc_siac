@@ -37,6 +37,12 @@ if (isset($_SESSION['user_role'])) {
             $authController->showUnauthorized();
             break;
     }
+
+    // Check if the user wants to log out
+    if ($action === 'logout') {
+        $authController = new AuthController();
+        $authController->logOut();
+    }
 } else {
     // User is not logged in (guest)
 
