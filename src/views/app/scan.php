@@ -14,7 +14,6 @@
 <body>
     <div class="container">
         <div id="qr-reader"></div>
-        <div id="qr-reader-results"></div>
     </div>
 
     <?php include 'assets/includes/tab-bar.php'; ?>

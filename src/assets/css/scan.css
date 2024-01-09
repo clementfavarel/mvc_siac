@@ -6,7 +6,7 @@
     margin: 0;
     padding: 0;
 }
-hmtl,
+html,
 body {
     height: 100%;
 }
@@ -19,6 +19,26 @@ body {
 }
 .container {
     height: 100%;
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+#qr-reader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 50%;
+    width: 90%;
+    border-radius: 10px;
+    padding: 1rem !important;
+    position: static !important;
+}
+#html5-qrcode-button-camera-permission,
+#html5-qrcode-button-camera-start,
+#html5-qrcode-button-camera-stop {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
 }

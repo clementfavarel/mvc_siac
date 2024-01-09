@@ -1,4 +1,3 @@
-var resultContainer = document.getElementById("qr-reader-results");
 var lastResult,
     countResults = 0;
 
@@ -6,9 +5,21 @@ function onScanSuccess(decodedText, decodedResult) {
     if (decodedText !== lastResult) {
         ++countResults;
         lastResult = decodedText;
-        // Handle on success condition with the decoded message.
-        console.log(`Scan result ${decodedText}`, decodedResult);
-        resultContainer.innerHTML += `<div>[${countResults}] - ${decodedText}</div>`;
+
+        // Check if the decoded text contains the specified URL
+        var targetURL = "https://siac-marseille.alan-thob.fr/";
+        if (decodedText.includes(targetURL)) {
+            // Redirect the user to the decoded URL
+            window.location.href = decodedText;
+        } else {
+            console.log(
+                "Scan result does not contain the specified URL:",
+                decodedText
+            );
+            alert(
+                "Le QR Code scanné n'est pas supporté par l'application Mapollon."
+            );
+        }
     }
 }
 
