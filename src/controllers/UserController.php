@@ -117,8 +117,6 @@ class UserController
 
     private function showArtwork($artwork_id)
     {
-        // Example: Display the artwork page based on $artwork_id
-        // You can implement logic and load the corresponding artwork view
         // Fetch data for the specified artwork_id and render the artwork view
         $artworkData = $this->artworkModel->getArtworkById($artwork_id);
 
@@ -130,6 +128,7 @@ class UserController
             $this->showError();
         }
     }
+
 
     private function showError()
     {
