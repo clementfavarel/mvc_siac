@@ -46,9 +46,9 @@ De ces onglets, il est possible d'accéder à d'autres pages, telles que :
     ```
 
 2. Créez la base de données `mvc_siac` et importez le fichier `src/config/mvc_siac.sql` dans le serveur MySQL/MariaDB.
-3. Créez une copie du fichier `src/config/config.sample.php` et nommer ce dernier en `config.php`. Modifier par la suite le fichier afin d'éditer les variables de connexion à la base de données préalablement créée.
-4. Configurer le serveur WEB afin qu'il utilise le dossier `src/` comme dossier racine ou importer uniquement le contenu du dossier `src/` sur le serveur WEB.
-5. Lancer le serveur WEB et accéder à l'URL du site.
+3. Créez une copie du fichier `src/config/config.sample.php` et nommez ce dernier en `config.php`. Modifiez par la suite le fichier afin d'éditer les variables de connexion à la base de données préalablement créée.
+4. Configurez le serveur WEB afin qu'il utilise le dossier `src/` comme dossier racine ou importez uniquement le contenu du dossier `src/` sur le serveur WEB.
+5. Lancez le serveur WEB et accéder à l'URL du site.
 
 ## Fonctionnement
 
