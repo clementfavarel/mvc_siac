@@ -8,7 +8,7 @@ Au sein du SIAC, les artistes professionnels prennent la scène pour présenter 
 
 L'événement promet une atmosphère singulière où les visiteurs auront l'occasion de découvrir des œuvres originales directement accessibles, le tout agrémenté par la présence vivante des artistes. C'est un cocktail dédié à la création, où la rencontre entre le public et l'artiste se révèle être le maître-mot de cette expérience artistique unique.
 
-## L'application Mappolon
+## L'application Mapollon
 
 L'application permet de visualiser les artistes présents au salon.
 Elle se présente sous plusieurs onglets :
@@ -33,7 +33,7 @@ De ces onglets, il est possible d'accéder à d'autres pages, telles que :
 
 ## Installation
 
-1. Cloner le dépôt git :
+1. Clonez le dépôt git :
 
     ```sh
     git clone https://github.com/clementfavarel/mvc_siac.git
@@ -45,8 +45,8 @@ De ces onglets, il est possible d'accéder à d'autres pages, telles que :
     git clone git@github.com:clementfavarel/mvc_siac.git
     ```
 
-2. Importer le fichier `src/config/mvc_siac.sql` dans le serveur MySQL/MariaDB.
-3. Créer une copie du fichier `src/config/config.sample.php` et nommer ce dernier en `config.php`. Modifier par la suite le fichier afin d'éditer les variables de connexion à la base de données préalablement créée.
+2. Créez la base de données `mvc_siac` et importez le fichier `src/config/mvc_siac.sql` dans le serveur MySQL/MariaDB.
+3. Créez une copie du fichier `src/config/config.sample.php` et nommer ce dernier en `config.php`. Modifier par la suite le fichier afin d'éditer les variables de connexion à la base de données préalablement créée.
 4. Configurer le serveur WEB afin qu'il utilise le dossier `src/` comme dossier racine ou importer uniquement le contenu du dossier `src/` sur le serveur WEB.
 5. Lancer le serveur WEB et accéder à l'URL du site.
 
@@ -100,70 +100,34 @@ De ces onglets, il est possible d'accéder à d'autres pages, telles que :
 
 > Le système fournit un mécanisme permettant aux utilisateurs et aux administrateurs de se déconnecter, ce qui implique la destruction de la session et la redirection vers une page de confirmation de déconnexion ou la page de connexion.
 
-## TODO
+## Développement
 
--   Modify the admin model because it is found in the session with the role but the models work with the db.admins table <!--!error-->
+### Technologies utilisées
 
-## Tests
+LAMP stack :
 
-### Functional Tests :
+-   Debian GNU/Linux 12 (bookworm) x86_64
+-   Apache/2.4.57
+-   PHP 8.2.7
+-   10.11.4-MariaDB-1~deb12u1
 
-**Guest Access:**
+### Tutoriel installation d'un environnement LAMP
 
--   Verify that a guest can access the landing page.
--   Verify that a guest can access the registration form.
--   Verify that a guest can access the login form.
+-   [Ubuntu LAMP tutorial](https://doc.ubuntu-fr.org/lamp)
 
-**User Authentication:**
+### Tutoriel installation d'un environnement WAMP
 
--   Test user login with valid credentials.
--   Test user login with invalid credentials.
--   Test user registration with valid input.
--   Test user registration with invalid input.
+-   [WAMP tutorial](https://www.wampserver.com/en/)
+-   Télécharger et installer WAMPserver
+-   cloner le dépôt git dans le dossier `www/` de WAMPserver
 
-**User Dashboard:**
+### Tutoriel installation d'un environnement MAMP
 
--   Test access to the user dashboard after successful login.
--   Test access to different sections of the user dashboard.
+-   [MAMP tutorial](https://www.mamp.info/en/downloads/)
+-   Télécharger et installer MAMP
+-   cloner le dépôt git dans le dossier `htdocs/` de MAMP
 
-**Admin Authentication:**
+### Dépendances
 
--   Test admin login with valid credentials.
--   Test admin login with invalid credentials.
-
-**Admin Dashboard:**
-
--   Test access to the admin dashboard after successful login.
--   Test access to different sections of the admin dashboard.
-
-### Unit Tests :
-
-**User Model:**
-
--   Test the authenticateUser method with valid credentials.
--   Test the authenticateUser method with invalid credentials.
--   Test the createUser method with valid input.
--   Test the createUser method with invalid input.
-
-**Admin Model:**
-
--   Test the authenticateAdmin method with valid credentials.
--   Test the authenticateAdmin method with invalid credentials.
-
-**Database Connection:**
-
--   Test the database connection by connecting and disconnecting.
--   Test database queries using mock data.
-
-**Controller Methods:**
-
--   Test each method in the AuthController, UserController, and AdminController.
--   Ensure proper redirections, session handling, and view rendering.
-
-**Error Handling:**
-
--   Test error handling mechanisms for invalid actions or unexpected scenarios.
-
-**Session Handling:**
-
--   Test session creation and destruction during login and logout.
+-   [Html5QrcodeScanner](https://github.com/mebjas/html5-qrcode)
+-   [feathericons](https://feathericons.com/)

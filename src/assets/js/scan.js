@@ -7,7 +7,8 @@ function onScanSuccess(decodedText, decodedResult) {
         lastResult = decodedText;
 
         // Check if the decoded text contains the specified URL
-        var targetURL = "https://siac-marseille.alan-thob.fr/";
+        var targetURL =
+            "https://siac-marseille.alan-thob.fr/" || "http://localhost/";
         if (decodedText.includes(targetURL)) {
             // Redirect the user to the decoded URL
             window.location.href = decodedText;
