@@ -16,12 +16,11 @@
             <img src="assets/icons/sliders.svg" alt="Filter" class="top_icon" />
         </div>
     </div>
-    <div id="map">
-        <img class="map-img" src="assets/img/plan.png" alt="plan" />
-    </div>
+
+    <div class="map-container"></div>
+
     <?php include 'assets/includes/tab-bar.php'; ?>
 
-    <script src="assets/js/map.js"></script>
     <script src="assets/js/tab-bar.js"></script>
 </body>
 

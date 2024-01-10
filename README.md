@@ -33,7 +33,11 @@ De ces onglets, il est possible d'accéder à d'autres pages, telles que :
 
 ## Installation
 
+<<<<<<< HEAD
 1. Cloner le dépôt git :
+=======
+1. Clonez le dépôt git
+>>>>>>> 064e724 (push de crise)
 
     ```sh
     git clone https://github.com/clementfavarel/mvc_siac.git
@@ -45,10 +49,17 @@ De ces onglets, il est possible d'accéder à d'autres pages, telles que :
     git clone git@github.com:clementfavarel/mvc_siac.git
     ```
 
+<<<<<<< HEAD
 2. Importer le fichier `src/config/mvc_siac.sql` dans le serveur MySQL/MariaDB.
 3. Créer une copie du fichier `src/config/config.sample.php` et nommer ce dernier en `config.php`. Modifier par la suite le fichier afin d'éditer les variables de connexion à la base de données préalablement créée.
 4. Configurer le serveur WEB afin qu'il utilise le dossier `src/` comme dossier racine ou importer uniquement le contenu du dossier `src/` sur le serveur WEB.
 5. Lancer le serveur WEB et accéder à l'URL du site.
+=======
+2. Créez une base de données nommée `mvc_siac` et importez le fichier `src/config/mvc_siac.sql` dans le serveur MySQL/MariaDB
+3. Créez une copie du fichier `src/config/config.sample.php` et nommez la `config.php`. Ensuite, configurez la connexion à la base de données dans le fichier `src/config/config.php` en modifiant les variables de connexion
+4. Configurez votre serveur web pour qu'il utilise le dossier `src/` comme dossier racine ou uploadez uniquement le contenu du dossier `src/` sur votre serveur web (par défaut vous devrait sinon pointer vers l'url `/src`)
+5. Lancez votre serveur web et dirigez vous vers l'URL du site `http://localhost/mvc_siac`
+>>>>>>> 064e724 (push de crise)
 
 ## Fonctionnement
 
