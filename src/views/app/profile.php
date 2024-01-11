@@ -7,39 +7,43 @@
     <title>Profil | Mapollon</title>
     <link rel="stylesheet" href="assets/css/profile.css" />
     <link rel="stylesheet" href="assets/css/tab-bar.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 </head>
 
-<body>
-    <header class="top-bar">
-        <h1><?php echo $userData['user_firstname'] ?></h1>
-        <a href="index.php?action=logout" class="logout"><img src="assets/icons/log-out.svg" alt="logout icon" /></a>
-    </header>
+<div class="user-banner">
+    <h3>Bonjour,</h3>
+    <h2><?php echo $userData['user_firstname'] ?></h2>
+</div>
 
-    <div class="profile-card">
-        <div class="profile-info">
-            <img src="assets/icons/profile-on.svg" alt="user icon" class="profile-pic" />
-            <?php
-            $infoItems = [
-                'Nom' => $userData['user_lastname'],
-                'Prénom' => $userData['user_firstname'],
-                'Email' => "<a href='mailto:" . $userData['user_email'] . "'>" . $userData['user_email'] . "</a>",
-                'Profession' => $userData['user_job'],
-                'Date de naissance' => $userData['user_birth_date']
-            ];
-            foreach ($infoItems as $label => $value) {
-            ?>
-                <div class="info-group">
-                    <p class="label"><?php echo $label ?> :</p>
-                    <p class="value"><?php echo $value ?></p>
-                </div>
-            <?php
-            }
-            ?>
-        </div>
+<div class="user-infos-section">
+    <div class="infos-title">
+        <h1>Vos informations</h1>
+    </div>
+</div>
+
+<div class="user-infos">
+    <div class="inputs">
+        <input type="text" placeholder="<?php echo $userData['user_lastname'] ?>" readonly>
     </div>
 
-
+    <div class="inputs">
+        <input type="text" placeholder="<?php echo $userData['user_firstname'] ?>" readonly>
     </div>
+
+    <div class="inputs">
+        <input type="text" placeholder="<?php echo $userData['user_email'] ?>" readonly>
+    </div>
+
+    <div class="inputs">
+        <input type="text" placeholder="<?php echo $userData['user_job'] ?>" readonly>
+    </div>
+
+    <div class="disconnect">
+        <button id="logout-btn"><i class="bi bi-power"></i>Se déconnecter</button>
+    </div>
+
+</div>
+
 
     <?php include 'assets/includes/tab-bar.php'; ?>
     <script src="assets/js/tab-bar.js"></script>
