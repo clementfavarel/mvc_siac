@@ -53,6 +53,7 @@ body {
 
 .inputs input[type="text"]::placeholder {
     padding-left: 15px;
+    font-size: 15px;
   }
 
 .inputs {
@@ -68,10 +69,9 @@ body {
 
 .disconnect {
     margin-top: 5rem;
-
 }
 
-.disconnect button {
+.disconnect a {
     height: 3rem;
     width: 90%;
     border-radius: 0 20px 20px 0;
@@ -81,8 +81,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.disconnect i {
-    font-size: 30px;
+    text-decoration: none;
+    color: #000000;
 }

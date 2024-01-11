@@ -7,7 +7,6 @@
     <title>Profil | Mapollon</title>
     <link rel="stylesheet" href="assets/css/profile.css" />
     <link rel="stylesheet" href="assets/css/tab-bar.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 </head>
 
 <div class="user-banner">
@@ -39,7 +38,7 @@
     </div>
 
     <div class="disconnect">
-        <button id="logout-btn"><i class="bi bi-power"></i>Se déconnecter</button>
+        <a id="logout-btn" href="index.php?action=logout"><img src="assets/icons/power.svg">Se déconnecter</a>
     </div>
 
 </div>
