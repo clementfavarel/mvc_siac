@@ -21,10 +21,9 @@
         Onglet qui contient l'image de la carte sur laquelle doivent s'afficher les icônes de 'pin' `assets/icons/marker.svg`
         ils doivent être cliquables et au click, afficher un pop up avec les informations de l'oeuvre dont l'id est pointé / contenu par le pin
     -->
-    <div class="map-container"></div>
+    <div class="map-container" id="map-container"></div>
 
     <?php include 'assets/includes/tab-bar.php'; ?>
-
     <script src="assets/js/tab-bar.js"></script>
 </body>
 
