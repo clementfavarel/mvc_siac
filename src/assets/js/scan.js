@@ -1,7 +1,7 @@
 var lastResult,
     countResults = 0;
 
-function onScanSuccess(decodedText, decodedResult) {
+function onScanSuccess(decodedText) {
     if (decodedText !== lastResult) {
         ++countResults;
         lastResult = decodedText;
