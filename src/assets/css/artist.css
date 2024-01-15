@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    height: 100vh;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
+    background-color: #333;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-x: hidden;
+}
+.bg {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+}
+.previous {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #030303;
+    cursor: pointer;
+}
+.picture {
+    display: block;
+    margin: 0 auto;
+    height: 150px;
+    max-width: 100%;
+    object-fit: contain;
+    border: none;
+    border-radius: 50%;
+}
+.profile {
+    color: #fff;
+    z-index: 2;
+    line-height: 1;
+}
+.aw-title {
+    margin-top: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+.at-name {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+.video {
+    margin: 2rem 0;
+    position: relative;
+}
+.media {
+    display: block;
+    width: 90%;
+    aspect-ratio: 1/1;
+    margin: 0 auto;
+}
+.plume-haute {
+    position: absolute;
+    top: -20px;
+    right: -10px;
+    width: 120px;
+    rotate: 30deg;
+    z-index: 0;
+    filter: blur(1px);
+}
+.plume-basse {
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    width: 100px;
+    z-index: 2;
+}
+.carroussel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+.separator {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    gap: 1rem;
+}
+hr {
+    height: 5px;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+.big {
+    width: 80%;
+}
+.small {
+    width: 20%;
+}
+.text {
+    padding: 0 1rem;
+    text-align: center;
+}
+.artwork-img {
+    display: block;
+    width: 90%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    margin: 1rem auto;
+}
+
+/* TAB-BAR STYLES */
+.tab-bar {
+    top: 90vh !important;
+    bottom: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 95% !important;
+    border-radius: 20px !important;
+}

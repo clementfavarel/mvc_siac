@@ -16,9 +16,9 @@ class Artist
     public function getArtistById($artist_id)
     {
         // Get artist details by ID
-        $query = "SELECT * FROM artists WHERE artist_id = :artist_id";
+        $query = "SELECT * FROM artists WHERE at_id = :at_id";
         $this->db->query($query);
-        $this->db->bind(':artist_id', $artist_id);
+        $this->db->bind(':at_id', $artist_id);
 
         return $this->db->single();
     }
