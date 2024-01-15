@@ -31,6 +31,38 @@ De ces onglets, il est possible d'accéder à d'autres pages, telles que :
 
 -   **Profil** : permet de visualiser les informations de l'utilisateur connecté.
 
+## Développement
+
+### Technologies utilisées
+
+LAMP stack :
+
+-   Debian GNU/Linux 12 (bookworm) x86_64
+-   Apache/2.4.57
+-   PHP 8.2.7
+-   10.11.4-MariaDB-1~deb12u1
+
+### Tutoriel installation d'un environnement LAMP
+
+-   [Ubuntu LAMP tutorial](https://doc.ubuntu-fr.org/lamp)
+
+### Tutoriel installation d'un environnement WAMP
+
+-   [WAMP tutorial](https://www.wampserver.com/en/)
+-   Télécharger et installer WAMPserver
+-   cloner le dépôt git dans le dossier `www/` de WAMPserver
+
+### Tutoriel installation d'un environnement MAMP
+
+-   [MAMP tutorial](https://www.mamp.info/en/downloads/)
+-   Télécharger et installer MAMP
+-   cloner le dépôt git dans le dossier `htdocs/` de MAMP
+
+### Dépendances
+
+-   [Html5QrcodeScanner](https://github.com/mebjas/html5-qrcode)
+-   [feathericons](https://feathericons.com/)
+
 ## Installation
 
 1. Clonez le dépôt git :
@@ -99,35 +131,3 @@ De ces onglets, il est possible d'accéder à d'autres pages, telles que :
 ### Déconnexion
 
 > Le système fournit un mécanisme permettant aux utilisateurs et aux administrateurs de se déconnecter, ce qui implique la destruction de la session et la redirection vers une page de confirmation de déconnexion ou la page de connexion.
-
-## Développement
-
-### Technologies utilisées
-
-LAMP stack :
-
--   Debian GNU/Linux 12 (bookworm) x86_64
--   Apache/2.4.57
--   PHP 8.2.7
--   10.11.4-MariaDB-1~deb12u1
-
-### Tutoriel installation d'un environnement LAMP
-
--   [Ubuntu LAMP tutorial](https://doc.ubuntu-fr.org/lamp)
-
-### Tutoriel installation d'un environnement WAMP
-
--   [WAMP tutorial](https://www.wampserver.com/en/)
--   Télécharger et installer WAMPserver
--   cloner le dépôt git dans le dossier `www/` de WAMPserver
-
-### Tutoriel installation d'un environnement MAMP
-
--   [MAMP tutorial](https://www.mamp.info/en/downloads/)
--   Télécharger et installer MAMP
--   cloner le dépôt git dans le dossier `htdocs/` de MAMP
-
-### Dépendances
-
--   [Html5QrcodeScanner](https://github.com/mebjas/html5-qrcode)
--   [feathericons](https://feathericons.com/)
