@@ -58,8 +58,15 @@
             <img class="artwork-img" src="assets/img/aklarousse/cocotte-barcelone.JPEG" alt="La cocotte de Barcelone" />
         </div>
         <div class="anecdote"></div>
-        <div class="description"></div>
-        <div class="see-also"></div>
+        <div class="see-also">
+            <img src="assets/icons/chevron-left.svg" alt="<" />
+            <div class="text">
+                <h4 class="aw-title">ses oeuvres</h4>
+                <div class="tab">
+                </div>
+            </div>
+            <img src="assets/icons/chevron-right.svg" alt=">" />
+        </div>
     </div>
 
     <?php include 'assets/includes/tab-bar.php'; ?>
