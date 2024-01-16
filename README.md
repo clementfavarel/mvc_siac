@@ -51,12 +51,14 @@ LAMP stack :
 -   [WAMP tutorial](https://www.wampserver.com/en/)
 -   Télécharger et installer WAMPserver
 -   cloner le dépôt git dans le dossier `www/` de WAMPserver
+-   créer un virtual host
 
 ### Tutoriel installation d'un environnement MAMP
 
 -   [MAMP tutorial](https://www.mamp.info/en/downloads/)
 -   Télécharger et installer MAMP
 -   cloner le dépôt git dans le dossier `htdocs/` de MAMP
+-   créer un virtual host
 
 ### Dépendances
 
