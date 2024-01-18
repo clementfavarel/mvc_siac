@@ -1,0 +1,15 @@
+FROM mariadb:10.11.4
+
+# Set the root password for MariaDB
+ENV MYSQL_ROOT_PASSWORD=docker
+
+# Create a database and user for the application
+ENV MYSQL_DATABASE=mapollon
+ENV MYSQL_USER=docker
+ENV MYSQL_PASSWORD=docker
+
+# Copy the SQL dump file into the container
+COPY ./src/config/mapollon.sql /docker-entrypoint-initdb.d/mapollon.sql
+
+# Adjust permissions to allow the MySQL user to read the script
+RUN chmod 755 /docker-entrypoint-initdb.d/mapollon.sql

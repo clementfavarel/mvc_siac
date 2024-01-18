@@ -33,6 +33,12 @@ De ces onglets, il est possible d'accéder à d'autres pages, telles que :
 
 ## Développement
 
+**Lien du wiki : [Wiki](https://github.com/clementfavarel/docker-mapollon/wiki)**
+
+### Version
+
+-   Version 1.0.0
+
 ### Technologies utilisées
 
 LAMP stack :
@@ -62,27 +68,37 @@ LAMP stack :
 
 ### Dépendances
 
+-   [ThreeJS](https://threejs.org/)
 -   [Html5QrcodeScanner](https://github.com/mebjas/html5-qrcode)
 -   [feathericons](https://feathericons.com/)
 
 ## Installation
 
-1. Clonez le dépôt git :
+**Pour plus de facilité, nous avons mis en place un docker qui permet de lancer l'application en local facilement.**
 
-    ```sh
-    git clone https://github.com/clementfavarel/mvc_siac.git
-    ```
+1. Créez un dossier `mapollon/` à l'emplacement de votre choix sur votre machine.
+2. Assurez-vous d'avoir Docker et docker-compose installés sur votre machine, cf [Docker](https://docs.docker.com/get-docker/) et [docker-compose](https://docs.docker.com/compose/install/).
+3. Clonez le dépôt git dans votre dossier `mapollon/` :
+
+    `git clone https://github.com/clementfavarel/docker-mapollon.git`
 
     ou
 
-    ```sh
-    git clone git@github.com:clementfavarel/mvc_siac.git
-    ```
+    `git clone git@github.com:clementfavarel/docker-mapollon.git`
 
-2. Créez la base de données `mvc_siac` et importez le fichier `src/config/mvc_siac.sql` dans le serveur MySQL/MariaDB.
-3. Créez une copie du fichier `src/config/config.sample.php` et nommez ce dernier en `config.php`. Modifiez par la suite le fichier afin d'éditer les variables de connexion à la base de données préalablement créée.
-4. Configurez le serveur WEB afin qu'il utilise le dossier `src/` comme dossier racine ou importez uniquement le contenu du dossier `src/` sur le serveur WEB.
-5. Lancez le serveur WEB et accéder à l'URL du site.
+4. Créez une copie du fichier `src/config/config.sample.php` et nommez ce dernier en `config.php`. Modifiez par la suite le fichier afin d'éditer les variables de connexion à la base de données préalablement créée si nécessaire (cf. identifiants au-dessus).
+5. Placez-vous dans le dossier `docker-mapollon/` et lancez la commande :
+
+    `docker-compose up -d`
+
+6. Accédez au site vers l'URL [http://localhost:8080/](http://localhost:8080/).
+7. En vous rendant sur l'URL [http://localhost:8081/](http://localhost:8081/) vous accéderez à l'interface Adminer.
+8. Vous pourrez vous y connecter à l'aide des identifiants suivants :
+
+-   Serveur : `db`
+-   Utilisateur : `docker`
+-   Mot de passe : `docker`
+-   Base de données : `mapollon`
 
 ## Fonctionnement
 

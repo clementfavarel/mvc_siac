@@ -1,0 +1,49 @@
+version: "3"
+
+services:
+    # PHP-Apache Service
+    web:
+        build:
+            context: .
+            dockerfile: ./php/Dockerfile.php
+        ports:
+            - "8080:80"
+        depends_on:
+            - db
+        volumes:
+            - "./src:/var/www/html"
+        networks:
+            - mynetwork
+
+    # MariaDB Service
+    db:
+        build:
+            context: .
+            dockerfile: ./mysql/Dockerfile.mariadb
+        ports:
+            - "3307:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: docker
+            MYSQL_DATABASE: mapollon
+            MYSQL_USER: docker
+            MYSQL_PASSWORD: docker
+        volumes:
+            - db_data:/var/lib/mysql
+        networks:
+            - mynetwork
+
+    # Adminer Service
+    adminer:
+        image: adminer
+        ports:
+            - "8081:8080"
+        depends_on:
+            - db
+        networks:
+            - mynetwork
+
+networks:
+    mynetwork:
+
+volumes:
+    db_data:

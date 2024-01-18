@@ -2,9 +2,9 @@
 // config.php
 
 // Database Configuration
-define('DB_DSN', 'mysql:host=localhost;dbname=dbname');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
+define('DB_DSN', 'mysql:host=localhost;dbname=mapollon');
+define('DB_USERNAME', 'docker');
+define('DB_PASSWORD', 'docker');
 
 // Other Configuration Settings
 // Add any other constants or configuration settings needed for your application
