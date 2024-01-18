@@ -1,10 +1,12 @@
 <?php
 // AuthController.php
 
-require_once(__DIR__ . '/../models/User.php'); // Adjust the path based on your project structure
+// Include the User model
+require_once(__DIR__ . '/../models/User.php');
 
 class AuthController
 {
+    // User model instance
     private $userModel;
 
     public function __construct()
@@ -13,10 +15,12 @@ class AuthController
         $this->userModel = new User();
     }
 
+    // Handle different authentication actions based on the provided action
     public function handleAction($action)
     {
         switch ($action) {
             case 'login':
+                // Show login form for GET request, handle login for POST request
                 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                     $this->showLoginForm();
                 } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -25,6 +29,7 @@ class AuthController
                 break;
 
             case 'register':
+                // Show registration form for GET request, handle registration for POST request
                 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                     $this->showRegisterForm();
                 } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -32,7 +37,7 @@ class AuthController
                 }
                 break;
 
-                // Add other authentication-related actions as needed
+            // Add other authentication-related actions as needed
 
             default:
                 $this->showError();
@@ -40,11 +45,13 @@ class AuthController
         }
     }
 
+    // Display the login form
     public function showLoginForm()
     {
         include(__DIR__ . '/../views/auth/login.php');
     }
 
+    // Handle the login process
     private function handleLogin()
     {
         // Validate user input
@@ -75,11 +82,13 @@ class AuthController
         }
     }
 
+    // Display the registration form
     public function showRegisterForm()
     {
         include(__DIR__ . '/../views/auth/register.php');
     }
 
+    // Handle the user registration process
     private function handleRegister()
     {
         // Validate user input
@@ -132,18 +141,19 @@ class AuthController
         }
     }
 
+    // Display an unauthorized error page
     public function showUnauthorized()
     {
-        // Display an error page
         include(__DIR__ . '/../views/error/401.php');
     }
 
+    // Display a general error page
     public function showError()
     {
-        // Display an error page
         include(__DIR__ . '/../views/error/404.php');
     }
 
+    // Handle user logout
     public function logOut()
     {
         // Destroy the session

@@ -1,10 +1,12 @@
 <?php
 // AdminController.php
 
+// Include the Admin model
 require_once(__DIR__ . '/../models/Admin.php');
 
 class AdminController
 {
+    // Admin model instance
     private $adminModel;
 
     public function __construct()
@@ -13,14 +15,16 @@ class AdminController
         $this->adminModel = new Admin();
     }
 
+    // Handle different admin actions based on the provided action
     public function handleAction($action)
     {
         switch ($action) {
             case 'dashboard':
+                // Display the admin dashboard
                 $this->showDashboard();
                 break;
 
-                // Add other actions as needed
+            // Add other actions as needed
 
             default:
                 // Handle unknown action
@@ -29,6 +33,7 @@ class AdminController
         }
     }
 
+    // Display the admin dashboard
     private function showDashboard()
     {
         // Example: Display the admin dashboard
