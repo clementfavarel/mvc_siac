@@ -16,7 +16,7 @@
             <img src="assets/icons/sliders.svg" alt="Filter" class="top_icon" />
         </div>
     </div>
-    <div class="sketchfab-embed-wrapper"> <iframe title="Map Siac" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="350" height="800" src="https://sketchfab.com/models/068c42c580764cfbb1e4423cd636c40d/embed?autostart=1&camera=0"> </iframe> </div>
+
     <!--
         Onglet qui contient l'image de la carte sur laquelle doivent s'afficher les icônes de 'pin' `assets/icons/marker.svg`
         ils doivent être cliquables et au click, afficher un pop up avec les informations de l'oeuvre dont l'id est pointé / contenu par le pin
