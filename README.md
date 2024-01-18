@@ -33,7 +33,7 @@ De ces onglets, il est possible d'accéder à d'autres pages, telles que :
 
 ## Développement
 
-**Lien du wiki : [Wiki](https://github.com/clementfavarel/docker-mapollon/wiki)**
+**Lien du wiki des bonnes pratiques :** [Wiki](https://github.com/mathis-lambert/Bonnes-pratiques.git)
 
 ### Version
 
