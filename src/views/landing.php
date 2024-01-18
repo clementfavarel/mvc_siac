@@ -18,11 +18,16 @@
         </div>
         <div class="content">
             <h1 class="title">visitez le siac avec map'ollon</h1>
-            <p class="text">Arpentez le salon à travers un parcours sur les artistes engagés, avec de la Réalité Augmenté, des interviews personnalisées, ambiances sonores, et plus encore !</p>
+            <p class="text">
+
+            Découvrez une expérience immersive au SIAC, avec plus de 100 artistes engagés. Explorez des œuvres en Réalité Augmentée, plongez dans des interviews et ressentez des ambiances sonores. </p>
         </div>
         <div class="buttons">
-            <a class="btn secondary" href="index.php?action=login">Je me connecte</a>
-            <a class="btn primary" href="index.php?action=register">Je crée mon compte</a>
+            <a class="btn primary" href="index.php?action=login">Je me connecte</a>
+            <a class="btn secondary" href="index.php?action=register">Je crée mon compte</a>
+            <a class="btn guest" href="index.php?action=guest">Accéder au plan</a>
+            <p>Certaines fonctionnalités de l'application sont restreintes en mode invité.</p>
+
         </div>
     </div>
 </body>
