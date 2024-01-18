@@ -15,7 +15,9 @@ class AdminController
         $this->adminModel = new Admin();
     }
 
-    // Handle different admin actions based on the provided action
+    // Handle different admin actions based on the provided action in the url
+    // input: @param string $action
+    // output: @return void
     public function handleAction($action)
     {
         switch ($action) {
@@ -24,7 +26,7 @@ class AdminController
                 $this->showDashboard();
                 break;
 
-            // Add other actions as needed
+                // Add other actions as needed
 
             default:
                 // Handle unknown action
@@ -34,6 +36,7 @@ class AdminController
     }
 
     // Display the admin dashboard
+    // output: @return void
     private function showDashboard()
     {
         // Example: Display the admin dashboard
@@ -44,6 +47,4 @@ class AdminController
         // Example: Load the admin dashboard view
         include(__DIR__ . '/../views/admin/dashboard.php');
     }
-
-    // Add other methods for handling additional admin-related actions, if needed
 }

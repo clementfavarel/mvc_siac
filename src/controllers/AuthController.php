@@ -15,7 +15,9 @@ class AuthController
         $this->userModel = new User();
     }
 
-    // Handle different authentication actions based on the provided action
+    // Handle different authentication actions based on the provided action in the url
+    // input: @param string $action
+    // output: @return void
     public function handleAction($action)
     {
         switch ($action) {
@@ -37,7 +39,7 @@ class AuthController
                 }
                 break;
 
-            // Add other authentication-related actions as needed
+                // Add other authentication-related actions as needed
 
             default:
                 $this->showError();
@@ -46,6 +48,7 @@ class AuthController
     }
 
     // Display the login form
+    // output: @return void
     public function showLoginForm()
     {
         include(__DIR__ . '/../views/auth/login.php');
@@ -83,12 +86,15 @@ class AuthController
     }
 
     // Display the registration form
+    // output: @return void
     public function showRegisterForm()
     {
         include(__DIR__ . '/../views/auth/register.php');
     }
 
-    // Handle the user registration process
+    // Handle the registration process
+    // This function get the POST data from the registration form and create a new user in the database
+    // output: @return void
     private function handleRegister()
     {
         // Validate user input
@@ -142,18 +148,21 @@ class AuthController
     }
 
     // Display an unauthorized error page
+    // output: @return void
     public function showUnauthorized()
     {
         include(__DIR__ . '/../views/error/401.php');
     }
 
-    // Display a general error page
+    // Display an not found error page
+    // output: @return void
     public function showError()
     {
         include(__DIR__ . '/../views/error/404.php');
     }
 
-    // Handle user logout
+    // Log out the user
+    // output: @return void
     public function logOut()
     {
         // Destroy the session
@@ -163,5 +172,4 @@ class AuthController
         header('Location: index.php');
         exit();
     }
-    // Add other methods for handling additional authentication-related actions, if needed
 }
