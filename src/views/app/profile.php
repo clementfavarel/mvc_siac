@@ -10,8 +10,7 @@
 </head>
 
 <div class="user-banner">
-    <h3>Bonjour,</h3>
-    <h2><?php echo $userData['user_firstname'] ?></h2>
+    <h2>Bonjour, <?php echo $userData['user_firstname'] ?></h2>
 </div>
 
 <div class="user-infos-section">
@@ -20,22 +19,34 @@
     </div>
 </div>
 
-<div class="user-infos">
+<form class="user-form">
     <div class="inputs">
-        <input type="text" placeholder="<?php echo $userData['user_lastname'] ?>" readonly>
+        <input type="text" placeholder="<?php echo $userData['user_firstname'] ?>">
     </div>
 
     <div class="inputs">
-        <input type="text" placeholder="<?php echo $userData['user_firstname'] ?>" readonly>
+        <input type="text" placeholder="<?php echo $userData['user_email'] ?>">
     </div>
 
     <div class="inputs">
-        <input type="text" placeholder="<?php echo $userData['user_email'] ?>" readonly>
+        <input type="text" placeholder="<?php echo $userData['user_job'] ?>">
     </div>
 
     <div class="inputs">
-        <input type="text" placeholder="<?php echo $userData['user_job'] ?>" readonly>
+        <input type="password" placeholder="Nouveau mot de passe">
     </div>
+
+    <div class="inputs">
+        <input type="password" placeholder=Confirmer le mot de passe">
+    </div>
+
+    <div class="disconnect">
+        <a id="logout-btn" href="index.php?action=logout"><img src="assets/icons/power.svg">Sauvegarder</a>
+    </div>
+
+    <button type="submit">Sauvegarder</button>
+</form>
+
 
     <div class="disconnect">
         <a id="logout-btn" href="index.php?action=logout"><img src="assets/icons/power.svg">Se déconnecter</a>
