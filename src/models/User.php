@@ -1,10 +1,12 @@
 <?php
 // User.php
 
+// Include the Db class
 require_once(__DIR__ . '/Db.php');
 
 class User
 {
+    // Db instance
     private $db;
 
     public function __construct()
@@ -13,6 +15,10 @@ class User
         $this->db = new Db();
     }
 
+    // Authenticate user
+    // input: @param string $user_email
+    // input: @param string $user_pwd
+    // output: @return array|null
     public function authenticateUser($user_email, $user_pwd)
     {
         // Authenticate user
@@ -30,6 +36,14 @@ class User
         return null;
     }
 
+    // Create user
+    // input: @param string $user_firstname
+    // input: @param string $user_lastname
+    // input: @param string $user_job
+    // input: @param string $user_email
+    // input: @param string $user_birth_date
+    // input: @param string $user_pwd
+    // output: @return array
     public function createUser($user_firstname, $user_lastname, $user_job, $user_email, $user_birth_date, $user_pwd)
     {
         // Hash the password
@@ -51,6 +65,9 @@ class User
         return $this->getUserById($userId);
     }
 
+    // Get user details by ID
+    // input: @param int $userId
+    // output: @return array
     public function getUserById($userId)
     {
         // Get user details by ID
@@ -61,6 +78,8 @@ class User
         return $this->db->single();
     }
 
+    // Get all users
+    // output: @return array
     public function getAllUsers()
     {
         // Get all users
@@ -69,6 +88,4 @@ class User
 
         return $this->db->all();
     }
-
-    // Add other methods for additional user-related database operations, if needed
 }

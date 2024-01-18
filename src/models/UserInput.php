@@ -1,6 +1,10 @@
 <?php
 class UserInput
 {
+    // Validate login input
+    // input: @param string $user_email
+    // input: @param string $user_pwd
+    // output: @return array
     public static function validateLoginInput($user_email, $user_pwd)
     {
         $validatedEmail = self::validateEmail($user_email);
@@ -12,6 +16,14 @@ class UserInput
         ];
     }
 
+    // Validate registration input
+    // input: @param string $user_firstname
+    // input: @param string $user_lastname
+    // input: @param string $user_job
+    // input: @param string $user_email
+    // input: @param string $user_birth_date
+    // input: @param string $user_pwd
+    // output: @return array
     public static function validateRegistrationInput($user_firstname, $user_lastname, $user_job, $user_email, $user_birth_date, $user_pwd)
     {
         $validatedFirstname = self::validateStringLength($user_firstname, 50);
@@ -31,6 +43,9 @@ class UserInput
         ];
     }
 
+    // Validate email
+    // input: @param string $email
+    // output: @return array
     private static function validateEmail($email)
     {
         // Validate email using filter_var
@@ -43,6 +58,9 @@ class UserInput
         return $validatedEmail;
     }
 
+    // Validate password
+    // input: @param string $password
+    // output: @return array
     private static function validatePassword($password)
     {
         // Validate password using string manipulation and criteria
@@ -55,6 +73,10 @@ class UserInput
         return $password;
     }
 
+    // Validate string length
+    // input: @param string $value
+    // input: @param int $maxLength
+    // output: @return array
     private static function validateStringLength($value, $maxLength)
     {
         // Validate string length
@@ -67,6 +89,9 @@ class UserInput
         return $value;
     }
 
+    // Validate date
+    // input: @param string $date
+    // output: @return array
     private static function validateDate($date)
     {
         // Validate date format and components

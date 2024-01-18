@@ -1,10 +1,12 @@
 <?php
 // Artist.php
 
+// Include the Db class
 require_once(__DIR__ . '/Db.php');
 
 class Artist
 {
+    // Db instance
     private $db;
 
     public function __construct()
@@ -13,6 +15,9 @@ class Artist
         $this->db = new Db();
     }
 
+    // Get all artists
+    // input: @param int $artist_id
+    // output: @return array
     public function getArtistById($artist_id)
     {
         // Get artist details by ID

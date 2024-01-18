@@ -1,10 +1,12 @@
 <?php
 // Admin.php
 
+// Include the Db class
 require_once(__DIR__ . '/Db.php');
 
 class Admin
 {
+    // Db instance
     private $db;
 
     public function __construct()
@@ -13,6 +15,9 @@ class Admin
         $this->db = new Db();
     }
 
+    // Get admin details by ID
+    // input: @param int $adminId
+    // output: @return array
     public function getAdminById($adminId)
     {
         // Example: Get admin details by ID
@@ -22,6 +27,4 @@ class Admin
 
         return $this->db->single();
     }
-
-    // Add other methods for additional admin-related database operations, if needed
 }
