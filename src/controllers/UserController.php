@@ -71,6 +71,33 @@ class UserController
                 }
                 break;
 
+            case 'update_user':
+                // Check if user_id is set in the URL
+                if (isset($_SESSION['user_id'])) {
+                    // check if all fields are set
+                    $required_fields = array('user_firstname', 'user_lastname', 'user_email', 'user_job', 'user_pwd');
+                    foreach ($required_fields as $field) {
+                        if (empty($_POST[$field])) {
+                            // Handle the case when a required field is empty and if it is,
+                            // set the value to the current value in the database
+                            $_POST[$field] = $this->userModel->getUserById($_SESSION['user_id'])[$field];
+                        }
+                    }
+
+                    // check if the passwords exists and if the password confirmation are the same
+                    if (!empty($_POST['user_pwd']) && !empty($_POST['user_pwd_confirm']) && $_POST['user_pwd'] != $_POST['user_pwd_confirm']) {
+                        // Handle the case when the passwords are not the same
+                        $this->showError();
+                    }
+
+                    $user_id = $_SESSION['user_id'];
+                    $this->userModel->updateUser($user_id);
+                } else {
+                    // Handle the case when user_id is not provided
+                    $this->showError();
+                }
+                break;
+
             default:
                 $this->showError();
                 break;

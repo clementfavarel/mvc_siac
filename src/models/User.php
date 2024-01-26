@@ -65,6 +65,31 @@ class User
         return $this->getUserById($userId);
     }
 
+    // Update user
+    // input: @param int $userId
+    // input: @param string $user_firstname
+    // input: @param string $user_lastname
+    // input: @param string $user_job
+    // input: @param string $user_email
+    // input: @param string $user_birth_date
+    // input: @param string $user_pwd
+    // output: @return array
+    public function updateUser($userId)
+    {
+        $query = "UPDATE users SET user_firstname = :user_firstname, user_lastname = :user_lastname, user_job = :user_job, user_email = :user_email, user_pwd = :user_pwd WHERE user_id = :user_id";
+        $this->db->query($query);
+        $this->db->bind(':user_id', $userId);
+        $this->db->bind(':user_firstname', $_POST['user_firstname']);
+        $this->db->bind(':user_lastname', $_POST['user_lastname']);
+        $this->db->bind(':user_job', $_POST['user_job']);
+        $this->db->bind(':user_email', $_POST['user_email']);
+        $this->db->bind(':user_pwd', password_hash($_POST['user_pwd'], PASSWORD_DEFAULT));
+        $this->db->execute();
+
+        // Fetch the updated user to return its details
+        header('Location: index.php?action=profile');
+    }
+
     // Get user details by ID
     // input: @param int $userId
     // output: @return array

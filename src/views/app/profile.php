@@ -24,23 +24,27 @@
 
     <form class="user-form" method="post" action="index.php?action=update_user">
         <div class="inputs">
-            <input type="text" value="<?php echo $userData['user_firstname'] ?>">
+            <input name="user_firstname" type="text" value="<?php echo $userData['user_firstname'] ?>">
         </div>
 
         <div class="inputs">
-            <input type="text" value="<?php echo $userData['user_email'] ?>">
+            <input name="user_lastname" type="text" value="<?php echo $userData['user_lastname'] ?>">
         </div>
 
         <div class="inputs">
-            <input type="text" value="<?php echo $userData['user_job'] ?>">
+            <input name="user_email" type="text" value="<?php echo $userData['user_email'] ?>">
         </div>
 
         <div class="inputs">
-            <input type="password" placeholder="Nouveau mot de passe">
+            <input name="user_job" type="text" value="<?php echo $userData['user_job'] ?>">
         </div>
 
         <div class="inputs">
-            <input type="password" placeholder="Confirmer le mot de passe">
+            <input name="user_pwd" type="password" placeholder="Nouveau mot de passe">
+        </div>
+
+        <div class="inputs">
+            <input name="user_pwd_confirm" type="password" placeholder="Confirmation du nouveau mot de passe">
         </div>
 
         <div class="save">
