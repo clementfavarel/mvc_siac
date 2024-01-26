@@ -51,6 +51,8 @@ if (isset($_SESSION['user_role'])) {
         // Guest wants to sign up or sign in
         $authController = new AuthController();
         $authController->handleAction($action);
+    } else if ($action === 'map') {
+        include(__DIR__ . '/views/app/map.php');
     } else {
         // Guest is on the landing page
         include(__DIR__ . '/views/landing.php');
