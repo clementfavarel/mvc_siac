@@ -32,7 +32,6 @@ body {
 .user-infos-section {
     padding: 35px 0 0 20px;
     color: #ffffff;
-
 }
 
 .infos-title {
@@ -53,22 +52,23 @@ body {
     display: flex;
     margin-bottom: 12px;
     border-radius: 0 20px 20px 0;
+    text-indent: 15px;
 }
 
 .inputs input[type="text"]::placeholder {
-    padding-left: 15px;
     font-size: 15px;
-  }
+}
 
 .inputs {
     border-radius: 0 20px 20px 0;
     margin: 0 90px 18px 0;
-    background: #FFE09D;
+    background: #ffe09d;
     height: 50px;
 }
 
 .save {
     margin-top: 5rem;
+    cursor: pointer;
 }
 
 .save button {
@@ -76,7 +76,7 @@ body {
     width: 90%;
     border-radius: 0 20px 20px 0;
     border: none;
-    background: #FFE09D;
+    background: #ffe09d;
     font-size: 17px;
     display: flex;
     align-items: center;
