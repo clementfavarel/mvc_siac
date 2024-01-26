@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Artiste | App</title>
+    <title>Artiste | Mapollon</title>
     <link rel="stylesheet" href="assets/css/artist.css" />
     <link rel="stylesheet" href="assets/css/tab-bar.css" />
 </head>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scan | App</title>
+    <title>Scan | Mapollon</title>
     <link rel="stylesheet" href="assets/css/scan.css" />
     <link rel="stylesheet" href="assets/css/tab-bar.css" />
     <script src="https://unpkg.com/html5-qrcode"></script>
