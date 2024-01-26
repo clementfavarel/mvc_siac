@@ -7,6 +7,14 @@
     <title>Plan | Mapollon</title>
     <link rel="stylesheet" href="assets/css/map.css" />
     <link rel="stylesheet" href="assets/css/tab-bar.css" />
+    <script type="importmap">
+        {
+            "imports": {
+            "three": "https://unpkg.com/three@0.160.1/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.160.1/examples/jsm/"
+            }
+        }
+</script>
 </head>
 
 <body>
@@ -16,15 +24,11 @@
             <img src="assets/icons/sliders.svg" alt="Filter" class="top_icon" />
         </div>
     </div>
-    <div class="sketchfab-embed-wrapper"> <iframe title="Map Siac" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="350" height="800" src="https://sketchfab.com/models/068c42c580764cfbb1e4423cd636c40d/embed?autostart=1&camera=0"> </iframe> </div>
-    <!--
-        Onglet qui contient l'image de la carte sur laquelle doivent s'afficher les icônes de 'pin' `assets/icons/marker.svg`
-        ils doivent être cliquables et au click, afficher un pop up avec les informations de l'oeuvre dont l'id est pointé / contenu par le pin
-    -->
     <div class="map-container" id="map-container"></div>
 
     <?php include 'assets/includes/tab-bar.php'; ?>
     <script src="assets/js/tab-bar.js"></script>
+    <script type="module" src="assets/js/map.js"></script>
 </body>
 
 </html>
