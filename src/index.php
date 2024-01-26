@@ -20,6 +20,12 @@ if (isset($_SESSION['user_role'])) {
     // User is logged in, determine the user role
     $userRole = $_SESSION['user_role'];
 
+    // Check if the user wants to log out
+    if ($action === 'logout') {
+        $authController = new AuthController();
+        $authController->logOut();
+    }
+
     // Route the request based on the user role and action
     switch ($userRole) {
         case 'user':
@@ -36,12 +42,6 @@ if (isset($_SESSION['user_role'])) {
             $authController = new AuthController();
             $authController->showUnauthorized();
             break;
-    }
-
-    // Check if the user wants to log out
-    if ($action === 'logout') {
-        $authController = new AuthController();
-        $authController->logOut();
     }
 } else {
     // User is not logged in (guest)

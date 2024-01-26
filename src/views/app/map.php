@@ -26,8 +26,12 @@
     </div>
     <div class="map-container" id="map-container"></div>
 
-    <?php include 'assets/includes/tab-bar.php'; ?>
-    <script src="assets/js/tab-bar.js"></script>
+    <?php
+    if (isset($_SESSION['user_role'])) {
+        include 'assets/includes/tab-bar.php';
+        echo '<script src="assets/js/tab-bar.js"></script>';
+    }
+    ?>
     <script type="module" src="assets/js/map.js"></script>
 </body>
 
