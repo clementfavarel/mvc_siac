@@ -475,4 +475,4 @@
         <div class="fist"></div>
     </div>
 </div>
-<h1 class="message">Unauthorised</h1>
+<h1 class="message">Unauthorized</h1>
