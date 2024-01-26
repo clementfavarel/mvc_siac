@@ -20,8 +20,13 @@ body {
     height: 7vh;
     background: rgba(255, 255, 255, 0.4);
     display: flex;
-    padding-left: 30px;
+    padding: 0 25px;
     align-items: center;
+    justify-content: space-between;
+}
+
+.user-banner img {
+    height: 30px;
 }
 
 .user-infos-section {
@@ -62,11 +67,11 @@ body {
     height: 50px;
 }
 
-.disconnect {
+.save {
     margin-top: 5rem;
 }
 
-.disconnect a {
+.save button {
     height: 3rem;
     width: 90%;
     border-radius: 0 20px 20px 0;
@@ -74,8 +79,17 @@ body {
     background: #FFE09D;
     font-size: 17px;
     display: flex;
-    justify-content: center;
     align-items: center;
     text-decoration: none;
     color: #000000;
+}
+
+.save span {
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.save img {
+    margin-right: 7px;
 }
