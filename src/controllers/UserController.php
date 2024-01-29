@@ -60,17 +60,6 @@ class UserController
                 }
                 break;
 
-            case 'artwork':
-                // Check if artwork_id is set in the URL
-                if (isset($_GET['artwork_id'])) {
-                    $artwork_id = $_GET['artwork_id'];
-                    $this->showArtwork($artwork_id);
-                } else {
-                    // Handle the case when artwork_id is not provided
-                    $this->showError();
-                }
-                break;
-
             default:
                 $this->showError();
                 break;
@@ -126,29 +115,13 @@ class UserController
         // You can implement logic and load the corresponding artist view
         // Fetch data for the specified artist_id and render the artist view
         $artistData = $this->artistModel->getArtistById($artist_id);
+        $artworkData = $this->artworkModel->getMainArtworkByArtistId($artist_id);
 
-        if ($artistData) {
+        if ($artistData && $artworkData) {
             // Example: Load the artist view with data
             include(__DIR__ . '/../views/app/artist.php');
         } else {
             // Handle the case when artist with the specified ID is not found
-            $this->showError();
-        }
-    }
-
-    // Display the artwork page
-    // input: @param int $artwork_id
-    // output: @return void
-    private function showArtwork($artwork_id)
-    {
-        // Fetch data for the specified artwork_id and render the artwork view
-        $artworkData = $this->artworkModel->getArtworkById($artwork_id);
-
-        if ($artworkData) {
-            // Example: Load the artwork view with data
-            include(__DIR__ . '/../views/app/artwork.php');
-        } else {
-            // Handle the case when artwork with the specified ID is not found
             $this->showError();
         }
     }

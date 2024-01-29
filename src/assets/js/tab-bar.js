@@ -17,7 +17,7 @@ function updateTabImages(currentAction) {
 
         // Mapping between tab texts and SVG filenames
         var textToIconMap = {
-            Plan: "plan",
+            Map: "map",
             Scan: "scan",
             Favoris: "likes",
             Profil: "profile",

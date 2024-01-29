@@ -3,7 +3,7 @@
         <li class="tab">
             <a class="tab_text" href="index.php?action=map">
                 <img class="tab_icon" src="assets/icons/map.svg" alt="map" />
-                <p class="tab_label">Plan</p>
+                <p class="tab_label">Map</p>
             </a>
         </li>
         <li class="tab">

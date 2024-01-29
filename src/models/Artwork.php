@@ -15,16 +15,31 @@ class Artwork
         $this->db = new Db();
     }
 
-    // Get all artworks
+    // Get artworks by artist ID
     // input: @param int $artist_id
     // output: @return array
-    public function getArtworkById($artwork_id)
+    public function getMainArtworkByArtistId($artist_id)
     {
         // Get artwork details by ID
-        $query = "SELECT * FROM artworks WHERE artwork_id = :artwork_id";
+        $query = "SELECT * FROM artworks WHERE artist_id = :artist_id AND importance = :importance";
         $this->db->query($query);
-        $this->db->bind(':artwork_id', $artwork_id);
+        $this->db->bind(':artist_id', $artist_id);
+        $this->db->bind(':importance', 'primary');
 
         return $this->db->single();
+    }
+
+    // Get second priority artworks by artist ID
+    // input: @param int $artist_id
+    // output: @return array
+    public function getArtworksByArtistId($artist_id)
+    {
+        // Get artwork details by ID
+        $query = "SELECT * FROM artworks WHERE artist_id = :artist_id AND importance = :importance";
+        $this->db->query($query);
+        $this->db->bind(':artist_id', $artist_id);
+        $this->db->bind(':importance', 'secondary');
+
+        return $this->db->all();
     }
 }

@@ -14,25 +14,25 @@
 
 <body>
     <div class="container">
-        <div class="bg">
+        <div class="bg" style="background-image: url('<?= $artistData['bg_src'] ?>')">
             <header>
                 <a class="previous" href="index.php?action=map">
                     <img src="assets/icons/previous.svg" alt="Retour" />
                 </a>
-                <h3>Stand n°<?= $artistData['at_stand'] ?></h3>
+                <h3>Stand n°<?= $artistData['num_stand'] ?></h3>
             </header>
             <div class="profile">
                 <img class="picture" src="assets/img/aklarousse/cocotte-barcelone.JPEG" alt="La Cocotte de Barcelone" />
                 <h2 class="aw-title">la cocotte de barcelone</h2>
-                <h1 class="at-name"><?= $artistData['at_firstname'] . ' ' . $artistData['at_lastname'] ?></h1>
+                <h1 class="at-name"><?= $artistData['pseudo'] ?></h1>
             </div>
             <div class="video">
-                <img class="plume-haute" src="assets/img/aklarousse/plume-haute.png" alt="plume" />
+                <img class="plume-haute" src="<?= $artistData['deco1'] ?>" alt="deco1" />
                 <video class="media" controls>
-                    <source src="movie.mp4" type="video/mp4">
+                    <source src="<?= $artistData['media_src'] ?>" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <img class="plume-basse" src="assets/img/aklarousse/plume-basse.png" alt="plume" />
+                <img class="plume-basse" src="<?= $artistData['deco2'] ?>" alt="deco2" />
             </div>
             <div class="separator">
                 <hr class="big">
@@ -41,9 +41,17 @@
             <div class="carroussel">
                 <img src="assets/icons/chevron-left.svg" alt="<" />
                 <div class="text">
-                    <div class="tab">
-                        <h4>Qui est <?= $artistData['at_firstname'] . ' ' . $artistData['at_lastname'] ?> ?</h4>
-                        <p><?= $artistData['at_story'] ?></p>
+                    <div class="tab1">
+                        <h4>Qui est <?= $artistData['pseudo'] ?> ?</h4>
+                        <p><?= $artistData['description1'] ?></p>
+                    </div>
+                    <div class="tab2" style="display:none">
+                        <h4>Qui est <?= $artistData['pseudo'] ?> ?</h4>
+                        <p><?= $artistData['description2'] ?></p>
+                    </div>
+                    <div class="tab3" style="display:none">
+                        <h4>Qui est <?= $artistData['pseudo'] ?> ?</h4>
+                        <p><?= $artistData['description3'] ?></p>
                     </div>
                 </div>
                 <img src="assets/icons/chevron-right.svg" alt=">" />
@@ -54,14 +62,14 @@
             </div>
         </div>
         <div class="artwork">
-            <h2 class="aw-title">la cocotte de barcelone</h2>
-            <img class="artwork-img" src="assets/img/aklarousse/cocotte-barcelone.JPEG" alt="La cocotte de Barcelone" />
+            <h2 class="aw-title"><?= $artworkData['title'] ?></h2>
+            <img class="artwork-img" src="<?= $artworkData['image_src'] ?>" alt="<?= $artworkData['image_alt'] ?>" />
         </div>
         <div class="anecdote"></div>
+        <h4 class="aw-title">ses oeuvres</h4>
         <div class="see-also">
             <img src="assets/icons/chevron-left.svg" alt="<" />
             <div class="text">
-                <h4 class="aw-title">ses oeuvres</h4>
                 <div class="tab">
                 </div>
             </div>
