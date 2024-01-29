@@ -8,6 +8,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Artiste | Mapollon</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
     <link rel="stylesheet" href="assets/css/artist.css" />
     <link rel="stylesheet" href="assets/css/tab-bar.css" />
 </head>
@@ -38,24 +40,22 @@
                 <hr class="big">
                 <hr class="small">
             </div>
-            <div class="carroussel">
-                <img src="assets/icons/chevron-left.svg" alt="<" />
-                <div class="text">
-                    <div class="tab1">
-                        <h4>Qui est <?= $artistData['pseudo'] ?> ?</h4>
-                        <p><?= $artistData['description1'] ?></p>
-                    </div>
-                    <div class="tab2" style="display:none">
-                        <h4>Qui est <?= $artistData['pseudo'] ?> ?</h4>
-                        <p><?= $artistData['description2'] ?></p>
-                    </div>
-                    <div class="tab3" style="display:none">
-                        <h4>Qui est <?= $artistData['pseudo'] ?> ?</h4>
-                        <p><?= $artistData['description3'] ?></p>
-                    </div>
+
+            <section class="lazy slider">
+                <div>
+                    <h4>Qui est <?= $artistData['pseudo'] ?> ?</h4>
+                    <p><?= $artistData['description1'] ?></p>
                 </div>
-                <img src="assets/icons/chevron-right.svg" alt=">" />
-            </div>
+                <div>
+                    <h4>Quelles sont ses ambitions ?</h4>
+                    <p><?= $artistData['description2'] ?></p>
+                </div>
+                <div>
+                    <h4>Quel est son travail ?</h4>
+                    <p><?= $artistData['description3'] ?></p>
+                </div>
+            </section>
+
             <div class="separator">
                 <hr class="small">
                 <hr class="big">
@@ -78,8 +78,19 @@
     </div>
 
     <?php include 'assets/includes/tab-bar.php'; ?>
-
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="assets/js/slick.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(document).on('ready', function() {
+            $(".lazy").slick({
+                lazyLoad: 'ondemand',
+                infinite: true
+            });
+        });
+    </script>
     <script src="assets/js/tab-bar.js"></script>
+
+
 </body>
 
 </html>
