@@ -8,15 +8,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Artiste | Mapollon</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/slick-theme.css">
     <link rel="stylesheet" href="assets/css/artist.css" />
     <link rel="stylesheet" href="assets/css/tab-bar.css" />
 </head>
 
 <body>
     <div class="container">
-        <div class="bg" style="background-image: url('<?= $artistData['bg_src'] ?>')">
+        <div class="bg" style="background-image: url('<?= $artistData['bg_src'] ?>');background-repeat: no-repeat; background-size: cover">
             <header>
                 <a class="previous" href="index.php?action=map">
                     <img src="assets/icons/previous.svg" alt="Retour" />
