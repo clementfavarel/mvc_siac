@@ -180,6 +180,11 @@ hr {
     margin-bottom: calc(80px + 1vh);
 }
 
+.see-also img {
+    margin: 0 auto;
+
+}
+
 /* TAB-BAR STYLES */
 .tab-bar {
     top: 90vh !important;
