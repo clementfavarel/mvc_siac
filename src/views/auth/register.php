@@ -7,7 +7,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inscription | Mapollon</title>
-    <link rel="stylesheet" href="assets/css/auth.css" />
     <link rel="stylesheet" href="assets/css/register.css" />
 </head>
 
@@ -34,9 +33,9 @@
             <div class="tab">
                 <label for="birth">Date de naissance</label>
                 <div class="birth">
-                    <input placeholder="jj" oninput="this.className = ''" name="dd" />
-                    <input placeholder="mm" oninput="this.className = ''" name="mm" />
-                    <input placeholder="aaaa" oninput="this.className = ''" name="yyyy" />
+                    <input placeholder="JJ" oninput="this.className = ''" name="dd" />
+                    <input placeholder="MM" oninput="this.className = ''" name="mm" />
+                    <input placeholder="AAAA" oninput="this.className = ''" name="yyyy" />
                 </div>
             </div>
             <div class="tab">
@@ -45,6 +44,14 @@
                 <label for="user_pwd_confirm">Confirmer le mot de passe</label>
                 <input oninput="this.className = ''" name="user_pwd_confirm" type="password" />
             </div>
+
+            <?php if (isset($_SESSION['error_message']) && !empty($_SESSION['error_message'])): ?>
+                <div class="error-box">
+                    <p class="error-message"><img src="assets/icons/alert-triangle.svg" alt="alert-triangle"><?php echo $_SESSION['error_message']; ?></p>
+                </div>
+                <?php unset($_SESSION['error_message']); ?>
+            <?php endif; ?>
+
             <!-- Circles which indicates the steps of the form: -->
             <div class="dots">
                 <span class="step"></span>

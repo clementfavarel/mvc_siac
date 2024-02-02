@@ -7,6 +7,7 @@
     margin: 0;
     padding: 0;
 }
+
 :root {
     --font-family: "Inter", sans-serif;
     --font-size: 16px;
@@ -16,16 +17,22 @@
     --primary: #e88bb2;
     --secondary: #e8b6cb;
 }
+
 html,
 body {
     height: 100%;
 }
+
 body {
     font-family: var(--font-family);
     font-size: var(--font-size);
     font-weight: var(--regular);
     color: var(--dark);
     background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../img/landing-bg.png") no-repeat center/cover var(--white);
 }
 
 label {
@@ -36,9 +43,9 @@ label {
 
 input {
     margin-bottom: 1rem;
-    padding: 0.5rem;
+    padding: 0.8rem;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 13px
 }
 
 input:focus {
@@ -86,11 +93,52 @@ a:hover {
     left: 1rem;
 }
 
-body {
-    background: url("../img/landing-bg.png") no-repeat center/cover var(--white);
+.error-box {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ff0000;
+    border-radius: 13px;
+
 }
 
-input.invalid {
-    border: 1px solid #ff0000;
-    background-color: #ffdddd;
+.error-message {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+}
+
+.error-message img{
+    margin-right: 10px;
+}
+
+.container {
+    width: 100%;
+    max-width: 380px;
+    border-radius: 20px;
+    color: #fcfcfc;
+}
+
+h1 {
+    font-size: 1.75rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-bottom: 1.5rem;
+}
+
+.center {
+    display: block;
+    margin: 1.5rem auto 0 auto;
+}
+
+.btn {
+    color: #030303;
 }

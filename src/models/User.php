@@ -88,4 +88,19 @@ class User
 
         return $this->db->all();
     }
+
+    // Vérifie si un utilisateur avec l'adresse e-mail donnée existe dans la base de données
+    // input: @param string $user_email
+    // output: @return bool
+    public function checkUserExists($user_email)
+    {
+        // Utilisez la logique appropriée pour vérifier si l'utilisateur existe dans la base de données
+        // Retourne true si l'utilisateur existe, sinon retourne false
+        $query = "SELECT * FROM users WHERE user_email = :user_email";
+        $this->db->query($query);
+        $this->db->bind(':user_email', $user_email);
+        $result = $this->db->single();
+
+        return ($result !== false);
+    }
 }

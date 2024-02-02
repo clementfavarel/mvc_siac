@@ -62,8 +62,21 @@ class AuthController
         $user_pwd = $_POST['user_pwd'];
 
         if (empty($user_email) || empty($user_pwd)) {
-            // Redirect with an error message
-            header('Location: index.php?action=login&error=Please fill in all fields');
+            // Set error message in session
+            $_SESSION['error_message'] = 'Veuillez remplir tous les champs.';
+            // Redirect to login page
+            header('Location: index.php?action=login');
+            exit();
+        }
+
+        // Check if the user exists in the database
+        $userExists = $this->userModel->checkUserExists($user_email);
+
+        if (!$userExists) {
+            // Set error message in session
+            $_SESSION['error_message'] = 'L\'adresse email n\'existe pas dans la base de données.';
+            // Redirect to login page
+            header('Location: index.php?action=login');
             exit();
         }
 
@@ -79,8 +92,10 @@ class AuthController
             header('Location: index.php?action=map');
             exit();
         } else {
-            // Redirect with an error message
-            header('Location: index.php?action=login&error=Invalid credentials');
+            // Set error message in session
+            $_SESSION['error_message'] = 'Votre mot de passe est incorrect.';
+            // Redirect to login page
+            header('Location: index.php?action=login');
             exit();
         }
     }
@@ -121,10 +136,16 @@ class AuthController
         }
 
         if ($user_pwd !== $user_pwd_confirm) {
-            // Redirect with an error message
-            header('Location: index.php?action=register&error=Passwords do not match');
+            // Set error message in session
+            $_SESSION['error_message'] = 'Les mots de passe ne correspondent pas.';
+            // Redirect to registration page
+            header('Location: index.php?action=register');
             exit();
         }
+
+        // Clear error message in session (si l'inscription réussit)
+        unset($_SESSION['error_message']);
+
 
         // Format the date of birth
         $user_birth_date = $year . '-' . $month . '-' . $day;
