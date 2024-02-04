@@ -43,7 +43,7 @@
             <hr class="small">
         </div>
 
-        <section class="lazy slider">
+        <section class="lazy slider" id="adjustableSlider1">
             <div>
                 <h4>Qui est <?= $artistData['pseudo'] ?> ?</h4>
                 <p><?= $artistData['description1'] ?></p>
@@ -69,7 +69,8 @@
     </div>
     <div class="anecdote"></div>
     <h4 class="aw-title">ses oeuvres</h4>
-    <section class="lazy slider">
+
+    <section class="lazy slider" id="adjustableSlider2">
         <div class="see-also">
             <img class="artwork-img" src="assets/img/aklarousse/lilith.png" alt="#"/>
             <h2>Lilith</h2>
@@ -79,22 +80,52 @@
             <h2>La venus verte</h2>
         </div>
     </section>
+
 </div>
 
 <?php include 'assets/includes/tab-bar.php'; ?>
 <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
 <script src="assets/js/slick.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript">
-    $(document).on('ready', function () {
-        $(".lazy").slick({
-            lazyLoad: 'ondemand',
+<script src="assets/js/tab-bar.js"></script>
+<script>
+    // Attendre que le document soit prêt
+    $(document).ready(function () {
+        // Sélectionner le conteneur du slider
+        const sliderContainer = $("#adjustableSlider1");
+
+        // Initialiser le slider avec Slick Carousel
+        sliderContainer.slick({
+            infinite: true,
+            onInit: function () {
+                adjustSliderHeight();
+            }
+        });
+
+        // Écouter l'événement afterChange
+        sliderContainer.on('afterChange', function (event, slick, currentSlide) {
+            // Réajuster la hauteur du conteneur du slider avec une animation
+            adjustSliderHeight();
+        });
+
+        // Fonction pour ajuster la hauteur du conteneur du slider
+        function adjustSliderHeight() {
+            // Obtenir la hauteur de la slide actuelle
+            let currentSlideHeight = sliderContainer.find('.slick-current').height();
+
+            // Appliquer la hauteur au conteneur du slider avec une animation
+            sliderContainer.height(currentSlideHeight);
+        }
+
+        // Sélectionner le conteneur du second slider
+        const sliderContainer2 = $("#adjustableSlider2");
+
+        sliderContainer2.slick({
             infinite: true
         });
     });
+
+
 </script>
-<script src="assets/js/tab-bar.js"></script>
-
-
 </body>
 
 </html>
