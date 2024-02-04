@@ -17,7 +17,7 @@
 <body>
 <div class="container">
     <div class="bg"
-         style="background-image: url('<?= $artistData['bg_src'] ?>');background-repeat: no-repeat; background-size: cover">
+         style="background-image: url('assets/img/<?= $artistData['bg_src'] ?>');background-repeat: no-repeat; background-size: cover">
         <header>
             <a class="previous" href="index.php?action=map">
                 <img src="assets/icons/previous.svg" alt="Retour"/>
@@ -30,12 +30,13 @@
             <h1 class="at-name"><?= $artistData['pseudo'] ?></h1>
         </div>
         <div class="video">
-            <img class="plume-haute" src="<?= $artistData['deco1'] ?>" alt="deco1"/>
-            <video class="media" controls>
-                <source src="<?= $artistData['media_src'] ?>" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <img class="plume-basse" src="<?= $artistData['deco2'] ?>" alt="deco2"/>
+            <img class="plume-haute" src="assets/img/<?= $artistData['deco1'] ?>" alt="deco1"/>
+
+            <iframe class="media" src="https://www.youtube.com/embed/<?= $artistData['media_src'] ?>"
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+                    allowfullscreen></iframe>
+
+            <img class="plume-basse" src="assets/img/<?= $artistData['deco2'] ?>" alt="deco2"/>
         </div>
         <div class="separator">
             <hr class="big">
@@ -70,12 +71,12 @@
     <h4 class="aw-title">ses oeuvres</h4>
     <section class="lazy slider">
         <div class="see-also">
-            <img class="artwork-img" src="assets/img/aklarousse/cocotte-barcelone.JPEG" alt="La Cocotte de Barcelone"/>
-            <h2>La Cocotte de Barcelone</h2>
-        </div>
-        <div>
-            <img class="artwork-img" src="assets/img/aklarousse/lilith.png" alt="La Cocotte de Barcelone"/>
+            <img class="artwork-img" src="assets/img/aklarousse/lilith.png" alt="#"/>
             <h2>Lilith</h2>
+        </div>
+        <div class="see-also">
+            <img class="artwork-img" src="assets/img/aklarousse/la-venus-verte.png" alt="#"/>
+            <h2>La venus verte</h2>
         </div>
     </section>
 </div>

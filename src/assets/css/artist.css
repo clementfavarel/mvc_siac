@@ -17,7 +17,6 @@ body {
     height: 100vh;
     font-family: "Inter", sans-serif;
     font-size: 16px;
-    line-height: 1.5;
     color: #fff;
     background-color: #000;
 }
@@ -87,11 +86,12 @@ header {
 .media {
     position: relative;
     display: block;
-    width: 90%;
+    width: 87%;
     aspect-ratio: 1/1;
     margin: 0 auto;
     z-index: 1;
     border-radius: 5px;
+    height: 23vh;
 }
 
 .plume-haute {
@@ -116,6 +116,9 @@ header {
     width: 90%;
     margin: 20px auto;
     text-align: center;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+    line-height: 1.5;
 }
 
 .slick-slide {
@@ -127,9 +130,8 @@ header {
     color: white;
 }
 
-
 .slick-slide {
-    transition: all ease-in-out .3s;
+    transition: all ease-in-out 0.3s;
 }
 
 .slick-active {
@@ -182,15 +184,4 @@ hr {
 
 .see-also img {
     margin: 0 auto;
-
-}
-
-/* TAB-BAR STYLES */
-.tab-bar {
-    top: 90vh !important;
-    bottom: auto !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: 95% !important;
-    border-radius: 20px !important;
 }
