@@ -185,3 +185,12 @@ hr {
 .see-also img {
     margin: 0 auto;
 }
+
+.previous {
+    top: 1rem;
+    left: 1rem;
+    background-color: #fff;
+    border-radius: 39px;
+    padding: 6px;
+    display: flex;
+}
