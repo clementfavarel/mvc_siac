@@ -39,7 +39,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem;
-    color: #000;
+    color: #fff;
 }
 
 .previous {
@@ -72,6 +72,12 @@ header {
     text-align: center;
 }
 
+.aw-size {
+    margin-top: 1rem;
+    text-align: center;
+    color: #cbcbcb;
+}
+
 .at-name {
     text-align: center;
     font-size: 1.25rem;
@@ -92,24 +98,6 @@ header {
     z-index: 1;
     border-radius: 5px;
     height: 23vh;
-}
-
-.plume-haute {
-    position: absolute;
-    top: -20px;
-    right: -10px;
-    width: 120px;
-    rotate: 30deg;
-    z-index: 0;
-    filter: blur(1px);
-}
-
-.plume-basse {
-    position: absolute;
-    bottom: -30px;
-    right: 0;
-    width: 100px;
-    z-index: 2;
 }
 
 .slider {

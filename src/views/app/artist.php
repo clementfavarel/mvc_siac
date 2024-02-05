@@ -16,8 +16,7 @@
 
 <body>
 <div class="container">
-    <div class="bg"
-         style="background-image: url('assets/img/<?= $artistData['bg_src'] ?>');background-repeat: no-repeat; background-size: cover">
+    <div class="bg" style="background-image: url('assets/img/<?= $artistData['bg_src'] ?>');background-repeat: no-repeat; background-size: cover">
         <header>
             <a class="previous" href="index.php?action=map">
                 <img src="assets/icons/previous.svg" alt="Retour"/>
@@ -25,18 +24,15 @@
             <h3>Stand n°<?= $artistData['num_stand'] ?></h3>
         </header>
         <div class="profile">
-            <img class="picture" src="assets/img/aklarousse/cocotte-barcelone.JPEG" alt="La Cocotte de Barcelone"/>
-            <h2 class="aw-title">la cocotte de barcelone</h2>
-            <h1 class="at-name"><?= $artistData['pseudo'] ?></h1>
+            <img class="picture" src="<?= $artworkData['image_src'] ?>" alt="Photo de <?= $artworkData['title'] ?>"/>
+            <h2 class="aw-title"><?= $artworkData['title'] ?></h2>
+            <h1 class="at-name">de <?= $artistData['pseudo'] ?></h1>
         </div>
         <div class="video">
-            <img class="plume-haute" src="assets/img/<?= $artistData['deco1'] ?>" alt="deco1"/>
-
             <iframe class="media" src="https://www.youtube.com/embed/<?= $artistData['media_src'] ?>"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+                    frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope;"
                     allowfullscreen></iframe>
 
-            <img class="plume-basse" src="assets/img/<?= $artistData['deco2'] ?>" alt="deco2"/>
         </div>
         <div class="separator">
             <hr class="big">
@@ -65,10 +61,12 @@
     </div>
     <div class="artwork">
         <h2 class="aw-title"><?= $artworkData['title'] ?></h2>
+        <p class="aw-size">Format :<?= $artworkData['size'] ?></p> <!-- Format de l'oeuvre -->
         <img class="artwork-img" src="<?= $artworkData['image_src'] ?>" alt="<?= $artworkData['image_alt'] ?>"/>
+
     </div>
     <div class="anecdote"></div>
-    <h4 class="aw-title">ses oeuvres</h4>
+    <h2 class="aw-title">ses oeuvres</h2>
 
     <section class="lazy slider" id="adjustableSlider2">
         <div class="see-also">
