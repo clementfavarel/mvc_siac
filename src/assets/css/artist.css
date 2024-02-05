@@ -117,10 +117,6 @@ header {
     margin: 0 20px;
 }
 
-.slick-prev:before,
-.slick-next:before {
-    color: white;
-}
 
 .slick-slide {
     transition: all ease-in-out 0.3s;

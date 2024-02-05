@@ -1,19 +1,3 @@
-/*
-     _ _      _       _
- ___| (_) ___| | __  (_)___
-/ __| | |/ __| |/ /  | / __|
-\__ \ | | (__|   < _ | \__ \
-|___/_|_|\___|_|\_(_)/ |___/
-                   |__/
-
- Version: 1.8.0
-  Author: Ken Wheeler
- Website: http://kenwheeler.github.io
-    Docs: http://kenwheeler.github.io/slick
-    Repo: http://github.com/kenwheeler/slick
-  Issues: http://github.com/kenwheeler/slick/issues
-
- */
 /* global window, document, define, jQuery, setInterval, clearInterval */
 ;(function(factory) {
     'use strict';
@@ -40,20 +24,12 @@
             _.defaults = {
                 accessibility: true,
                 adaptiveHeight: false,
-                appendArrows: $(element),
-                appendDots: $(element),
-                arrows: true,
                 asNavFor: null,
-                prevArrow: '<button class="slick-prev" aria-label="Précédent" type="button">Précédent</button>',
-                nextArrow: '<button class="slick-next" aria-label="Suivant" type="button">Suivant</button>',
                 autoplay: false,
                 autoplaySpeed: 3000,
                 centerMode: false,
                 centerPadding: '50px',
                 cssEase: 'ease',
-                customPaging: function(slider, i) {
-                    return $('<button type="button" />').text(i + 1);
-                },
                 dots: false,
                 dotsClass: 'slick-dots',
                 draggable: true,
@@ -103,8 +79,6 @@
                 listWidth: null,
                 listHeight: null,
                 loadIndex: 0,
-                $nextArrow: null,
-                $prevArrow: null,
                 scrolling: false,
                 slideCount: null,
                 slideWidth: null,
