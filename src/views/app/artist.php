@@ -41,15 +41,15 @@
 
         <section class="lazy slider" id="adjustableSlider1">
             <div>
-                <h4>Qui est <?= $artistData['pseudo'] ?> ?</h4>
+                <h3>Qui est <?= $artistData['pseudo'] ?> ?</h3>
                 <p><?= $artistData['description1'] ?></p>
             </div>
             <div>
-                <h4>Quelles sont ses ambitions ?</h4>
+                <h3>Ses ambitions</h3>
                 <p><?= $artistData['description2'] ?></p>
             </div>
             <div>
-                <h4>Quel est son travail ?</h4>
+                <h3>Son travail</h3>
                 <p><?= $artistData['description3'] ?></p>
             </div>
         </section>
@@ -70,11 +70,11 @@
 
     <section class="lazy slider" id="adjustableSlider2">
         <div class="see-also">
-            <img class="artwork-img" src="assets/img/aklarousse/lilith.png" alt="#"/>
+            <img class="artworks-img" src="assets/img/aklarousse/lilith.png" alt="#"/>
             <h2>Lilith</h2>
         </div>
         <div class="see-also">
-            <img class="artwork-img" src="assets/img/aklarousse/la-venus-verte.png" alt="#"/>
+            <img class="artworks-img" src="assets/img/aklarousse/la-venus-verte.png" alt="#"/>
             <h2>La venus verte</h2>
         </div>
     </section>
