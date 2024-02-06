@@ -23,30 +23,29 @@
     </div>
 
     <form class="user-form" method="post" action="index.php?action=update_user">
-        <div class="inputs">
-            <input type="text" value="<?php echo $userData['user_firstname'] ?>">
-        </div>
+        <?php
+        $inputData = array(
+            array('type' => 'text', 'value' => $userData['user_firstname']),
+            array('type' => 'text', 'value' => $userData['user_email']),
+            array('type' => 'text', 'value' => $userData['user_job']),
+            array('type' => 'password', 'placeholder' => 'Nouveau mot de passe'),
+            array('type' => 'password', 'placeholder' => 'Confirmer le mot de passe')
+        );
 
-        <div class="inputs">
-            <input type="text" value="<?php echo $userData['user_email'] ?>">
-        </div>
-
-        <div class="inputs">
-            <input type="text" value="<?php echo $userData['user_job'] ?>">
-        </div>
-
-        <div class="inputs">
-            <input type="password" placeholder="Nouveau mot de passe">
-        </div>
-
-        <div class="inputs">
-            <input type="password" placeholder="Confirmer le mot de passe">
-        </div>
+        foreach ($inputData as $input) {
+            echo '<div class="inputs">';
+            if ($input['type'] === 'password') {
+                echo '<input type="' . $input['type'] . '" placeholder="' . $input['placeholder'] . '">';
+            } else {
+                echo '<input type="' . $input['type'] . '" value="' . $input['value'] . '">';
+            }
+            echo '</div>';
+        }
+        ?>
 
         <div class="save">
             <button type="submit"><span><img src="assets/icons/save.svg">Sauvegarder</span></button>
         </div>
-
     </form>
 
 
