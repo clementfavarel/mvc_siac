@@ -12,7 +12,7 @@
 <body>
     <div class="top-bar">
         <div class="logo"><img src="assets/icons/logo.svg" alt="Map" class="mapollon" /></div>
-        <a class="filters">
+        <a href="index.php?action=artistsList" class="filters">
             <img src="assets/icons/users.svg" alt="Artists" class="top_icon" />
         </a>
     </div>

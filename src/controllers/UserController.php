@@ -60,6 +60,10 @@ class UserController
                 }
                 break;
 
+            case 'artistsList':
+                $this->artistsList();
+                break;
+
             default:
                 $this->showError();
                 break;
@@ -124,6 +128,16 @@ class UserController
             // Handle the case when artist with the specified ID is not found
             $this->showError();
         }
+    }
+
+    // Display the list of artists
+    // output: @return void
+    private function artistsList()
+    {
+        // Example: Display the list of artists
+        // You can implement logic and load the corresponding view
+        $artistsData = $this->artistModel->getAllArtists();
+        include(__DIR__ . '/../views/app/artistsList.php');
     }
 
 

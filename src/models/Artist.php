@@ -27,4 +27,16 @@ class Artist
 
         return $this->db->single();
     }
+
+    // Get all artists
+    // input: @param void
+    // output: @return array
+    public function getAllArtists()
+    {
+        // Get all artists
+        $query = "SELECT * FROM artists";
+        $this->db->query($query);
+
+        return $this->db->all();
+    }
 }
