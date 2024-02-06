@@ -21,7 +21,7 @@
     <div class="top-bar">
         <div class="logo"><img src="assets/icons/logo.svg" alt="Map" class="mapollon" /></div>
         <div class="filters">
-            <img src="assets/icons/sliders.svg" alt="Filter" class="top_icon" />
+            <img src="assets/icons/users.svg" alt="Artists" class="top_icon" />
         </div>
     </div>
     <div class="map-container" id="map-container"></div>
