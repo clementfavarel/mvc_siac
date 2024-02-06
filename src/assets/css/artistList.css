@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    color: #030303;
+    margin: 0;
+}
+
+body {
+    background-image: url("../img/landing-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.top-bar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 25px;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: 14px;
+}
+
+
+
+/* Masonry grid */
+.masonry {
+    column-gap: 30px;
+    column-fill: initial;
+
+}
+
+/* Masonry item */
+.masonry .brick {
+    margin-bottom: 30px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+
+/* Content wrapper for image and text */
+.content-wrapper {
+    position: relative;
+}
+
+/* Image inside content wrapper */
+.content-wrapper img {
+    width: 100%;
+    display: block;
+}
+
+/* Text container for headings */
+.text-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: left;
+}
+
+/* H2 styling */
+.text-container h2, .text-container h3 {
+    margin: 0;
+}
+
+.span {
+    font-weight: 700;
+}
+
+
+/* Gutterless masonry */
+.masonry.gutterless {
+    column-gap: 0;
+}
+
+.masonry.gutterless .brick {
+    margin-bottom: 0;
+}
+
+/* Masonry on tablets */
+@media only screen  and (max-width: 1023px) {
+    .masonry {
+        column-count: 2;
+    }
+}
+
+/* Masonry on big screens */
+@media only screen and (min-width: 1024px) {
+    .desc {
+        font-size: 1.25em;
+    }
+
+    .intro {
+        letter-spacing: 1px;
+    }
+
+    .masonry {
+        column-count: 3;
+    }
+}
