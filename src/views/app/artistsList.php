@@ -43,6 +43,78 @@
                 </div>
             </div>
 
+            <div class="brick">
+                <div class="content-wrapper">
+                    <img src="assets/img/aklarousse/cocotte-barcelone.jpeg" alt="#">
+                    <div class="text-container">
+                        <h2 class="span">Nom de l'artiste</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="brick">
+                <div class="content-wrapper">
+                    <img src="assets/img/aklarousse/cocotte-barcelone.jpeg" alt="#">
+                    <div class="text-container">
+                        <h2 class="span">Nom de l'artiste</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="brick">
+                <div class="content-wrapper">
+                    <img src="assets/img/aklarousse/cocotte-barcelone.jpeg" alt="#">
+                    <div class="text-container">
+                        <h2 class="span">Nom de l'artiste</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="brick">
+                <div class="content-wrapper">
+                    <img src="assets/img/aklarousse/cocotte-barcelone.jpeg" alt="#">
+                    <div class="text-container">
+                        <h2 class="span">Nom de l'artiste</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="brick">
+                <div class="content-wrapper">
+                    <img src="assets/img/aklarousse/cocotte-barcelone.jpeg" alt="#">
+                    <div class="text-container">
+                        <h2 class="span">Nom de l'artiste</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="brick">
+                <div class="content-wrapper">
+                    <img src="assets/img/aklarousse/cocotte-barcelone.jpeg" alt="#">
+                    <div class="text-container">
+                        <h2 class="span">Nom de l'artiste</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="brick">
+                <div class="content-wrapper">
+                    <img src="assets/img/aklarousse/cocotte-barcelone.jpeg" alt="#">
+                    <div class="text-container">
+                        <h2 class="span">Nom de l'artiste</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="brick">
+                <div class="content-wrapper">
+                    <img src="assets/img/aklarousse/cocotte-barcelone.jpeg" alt="#">
+                    <div class="text-container">
+                        <h2 class="span">Nom de l'artiste</h2>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
