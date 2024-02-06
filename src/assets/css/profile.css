@@ -63,7 +63,10 @@ body {
 
 .user-form input {
     height: 2.5rem;
-    border: none;
+    border-left: 12px solid transparent;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
     width: 100%;
     display: flex;
     margin-bottom: 12px;
