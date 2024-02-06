@@ -15,7 +15,8 @@
 
 <body>
 <div class="container">
-    <div class="bg" style="background-image: url('assets/img/<?= $artistData['bg_src'] ?>');background-repeat: no-repeat; background-size: cover">
+    <div class="bg"
+         style="background-image: url('assets/img/<?= $artistData['bg_src'] ?>');background-repeat: no-repeat; background-size: cover">
         <header>
             <a class="previous" href="index.php?action=map">
                 <img src="assets/icons/previous.svg" alt="Retour"/>
@@ -53,7 +54,12 @@
             </div>
         </section>
 
+        <div class="message-slide">
+            <p><img alt="astuce" src="assets/icons/lightbulb.svg">Glissez pour défiler.</p>
+        </div>
+
         <div class="separator">
+
             <hr class="small">
             <hr class="big">
         </div>
@@ -62,8 +68,19 @@
         <h2 class="aw-title"><?= $artworkData['title'] ?></h2>
         <p class="aw-size">Format :<?= $artworkData['size'] ?></p> <!-- Format de l'oeuvre -->
         <img class="artwork-img" src="<?= $artworkData['image_src'] ?>" alt="<?= $artworkData['image_alt'] ?>"/>
-
     </div>
+
+
+    <section id="audio">
+        <div class="message-immersion">
+            <p>Immergez-vous dans l'oeuvre...</p>
+        </div>
+        <audio src="<?= $artworkData['audio'] ?>" controls preload="auto">
+            Votre navigateur ne semble pas supporter ce fichier.
+        </audio>
+    </section>
+
+
     <div class="anecdote"></div>
     <h2 class="aw-title">ses oeuvres</h2>
 
@@ -76,6 +93,7 @@
             <img class="artworks-img" src="assets/img/aklarousse/la-venus-verte.png" alt="#"/>
             <h2>La venus verte</h2>
         </div>
+
     </section>
 
 </div>

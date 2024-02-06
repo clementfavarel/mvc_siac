@@ -188,3 +188,25 @@ hr {
     padding: 6px;
     display: flex;
 }
+
+.message-slide {
+    text-align: center;
+    margin-left: 5px;
+    font-style: italic;
+    color: #cbcbcb;
+}
+
+.message-slide img {
+    margin-right: 5px;
+}
+
+#audio {
+    margin: auto;
+}
+
+.message-immersion {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #cbcbcb;
+}
