@@ -53,6 +53,8 @@ if (isset($_SESSION['user_role'])) {
         $authController->handleAction($action);
     } else if ($action === 'map') {
         include(__DIR__ . '/views/app/map.php');
+    } else if ($action === 'logout') {
+        include(__DIR__ . '/views/landing.php');
     } else {
         // Guest is on the landing page
         include(__DIR__ . '/views/landing.php');

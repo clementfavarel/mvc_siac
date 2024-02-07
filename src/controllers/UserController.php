@@ -60,6 +60,23 @@ class UserController
                 }
                 break;
 
+            case 'update_user':
+                $user_id = $_SESSION['user_id'];
+                $user_data = $this->userModel->updateUser($user_id);
+                if ($user_data) {
+                    // Redirect to the user profile page
+                    header('Location: /user/profile');
+                } else {
+                    // Handle the case when user update fails
+                    $this->showError();
+                }
+                break;
+
+            case 'logout':
+                session_destroy();
+                header('Location: index.php');
+                break;
+
             default:
                 $this->showError();
                 break;

@@ -103,4 +103,24 @@ class User
 
         return ($result !== false);
     }
+
+    public function updateUser($user_id)
+    {
+        $user_firstname = $_POST['user_firstname'];
+        $user_lastname = $_POST['user_lastname'];
+        $user_job = $_POST['user_job'];
+        $user_email = $_POST['user_email'];
+        $user_pwd = $_POST['user_pwd'];
+
+        // Update user
+        $query = "UPDATE users SET user_firstname = :user_firstname, user_lastname = :user_lastname, user_job = :user_job, user_email = :user_email, user_pwd = :user_pwd WHERE user_id = :user_id";
+        $this->db->query($query);
+        $this->db->bind(':user_firstname', $user_firstname);
+        $this->db->bind(':user_lastname', $user_lastname);
+        $this->db->bind(':user_job', $user_job);
+        $this->db->bind(':user_email', $user_email);
+        $this->db->bind(':user_pwd', $user_pwd);
+        $this->db->bind(':user_id', $user_id);
+        $this->db->execute();
+    }
 }

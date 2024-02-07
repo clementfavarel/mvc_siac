@@ -25,19 +25,20 @@
     <form class="user-form" method="post" action="index.php?action=update_user">
         <?php
         $inputData = array(
-            array('type' => 'text', 'value' => $userData['user_firstname']),
-            array('type' => 'text', 'value' => $userData['user_email']),
-            array('type' => 'text', 'value' => $userData['user_job']),
-            array('type' => 'password', 'placeholder' => 'Nouveau mot de passe'),
-            array('type' => 'password', 'placeholder' => 'Confirmer le mot de passe')
+            array('type' => 'text', 'name' => 'user_firstname', 'value' => $userData['user_firstname']),
+            array('type' => 'text', 'name' => 'user_lastname', 'value' => $userData['user_lastname']),
+            array('type' => 'text', 'name' => 'user_job', 'value' => $userData['user_job']),
+            array('type' => 'email', 'name' => 'user_email', 'value' => $userData['user_email']),
+            array('type' => 'password', 'name' => 'user_pwd', 'placeholder' => 'Nouveau mot de passe'),
+            array('type' => 'password', 'name' => 'user_pwd_confirm', 'placeholder' => 'Confirmer le mot de passe')
         );
 
         foreach ($inputData as $input) {
             echo '<div class="inputs">';
             if ($input['type'] === 'password') {
-                echo '<input type="' . $input['type'] . '" placeholder="' . $input['placeholder'] . '">';
+                echo '<input type="' . $input['type'] . '" name="' . $input['name'] . '" placeholder="' . $input['placeholder'] . '">';
             } else {
-                echo '<input type="' . $input['type'] . '" value="' . $input['value'] . '">';
+                echo '<input type="' . $input['type'] . '" name="' . $input['name'] . '" value="' . $input['value'] . '">';
             }
             echo '</div>';
         }
