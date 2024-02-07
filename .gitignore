@@ -1,2 +1,4 @@
 src/config/config.php
 .idea/workspace.xml
+.idea/vcs.xml
+.idea/php.xml
