@@ -110,20 +110,6 @@
             <h2 class="aw-title">ses oeuvres</h2>
 
             <section class="lazy slider" id="adjustableSlider2">
-                <?php
-
-                foreach ($imagesData as $image) {
-                ?>
-                    <div class="see-also">
-                        <img class="artworks-img" src="assets/img/<?php echo $image['src']; ?>" alt="<?php echo $image['alt']; ?>" />
-                        <h2><?php echo $image['title']; ?></h2>
-                    </div>
-                <?php
-                }
-                ?>
-            </section>
-
-            <section class="lazy slider" id="adjustableSlider2">
                 <div class="see-also">
                     <img class="artworks-img" src="<?= $artistData['img_1'] ?>" alt="" />
                     <h2>Lilith</h2>
@@ -132,7 +118,6 @@
                     <img class="artworks-img" src="<?= $artistData['img_2'] ?>" alt="" />
                     <h2>La venus verte</h2>
                 </div>
-
             </section>
 
             <div class="floating-button">
