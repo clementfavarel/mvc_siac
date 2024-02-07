@@ -1,6 +1,3 @@
-<!-- background différent donc lié à $artworkData['aw_url'] -->
-<!-- media peut être mp4 ou mp3 attention à traiter erreurs en fonction de la source -->
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -111,12 +108,12 @@
 
             <section class="lazy slider" id="adjustableSlider2">
                 <div class="see-also">
-                    <img class="artworks-img" src="<?= $artistData['img_1'] ?>" alt="" />
-                    <h2>Lilith</h2>
+                    <img class="artworks-img" src="assets/img/<?= $artistData['img_1'] ?>" alt="<?= $artistData['img_1-title'] ?>" />
+                    <h2><?= $artistData['img_1-title'] ?></h2>
                 </div>
                 <div class="see-also">
-                    <img class="artworks-img" src="<?= $artistData['img_2'] ?>" alt="" />
-                    <h2>La venus verte</h2>
+                    <img class="artworks-img" src="assets/img/<?= $artistData['img_2'] ?>" alt="<?= $artistData['img_2-title'] ?>" />
+                    <h2><?= $artistData['img_2-title'] ?></h2>
                 </div>
             </section>
 
