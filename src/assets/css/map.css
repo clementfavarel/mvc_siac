@@ -13,7 +13,7 @@ body {
 body {
     height: 100vh;
     display: grid;
-    grid-template-rows: 60px 1fr 80px;
+    grid-template-rows: 60px 1fr 59px;
     font-family: "Inter", sans-serif;
     font-size: 16px;
     color: #030303;
@@ -44,7 +44,7 @@ body {
     justify-content: center;
 }
 .map-container {
-    padding: 1rem;
+    padding-top: 1rem;
 }
 .pin-icon {
     width: 24px;

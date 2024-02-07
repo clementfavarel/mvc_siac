@@ -18,7 +18,7 @@
     </div>
 
     <div class="map-container" id="map-container">
-        <div class="sketchfab-embed-wrapper"> <iframe title="Map Siac" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="350" height="800" src="https://sketchfab.com/models/068c42c580764cfbb1e4423cd636c40d/embed?autostart=1&camera=0"> </iframe> </div>
+        <div class="sketchfab-embed-wrapper" style="height: 100%"> <iframe style="height: 100%; width: 100%" title="Map Siac" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/068c42c580764cfbb1e4423cd636c40d/embed?autostart=1&camera=0"> </iframe> </div>
     </div>
 
     <div class="popup" id="popupArtistList">
