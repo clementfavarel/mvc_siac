@@ -39,7 +39,7 @@ CREATE TABLE `artworks` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 INSERT INTO `artworks` (`artwork_id`, `title`, `image_src`, `image_alt`, `importance`, `artist_id`) VALUES
-(1,	'La Cocotte de Barcelone',	'assets/img/aklarousse/cocotte-barcelone.JPEG',	'La Cocotte de Barcelone',	'primary',	1);
+(1,	'La Cocotte de Barcelone',	'assets/img/aklarousse/cocotte-barcelone.jpeg',	'La Cocotte de Barcelone',	'primary',	1);
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
