@@ -36,7 +36,8 @@ class Artist
         // Get all artists
         $query = "SELECT * FROM artists";
         $this->db->query($query);
+        $artistsData = $this->db->all();
 
-        return $this->db->all();
+        return $artistsData;
     }
 }

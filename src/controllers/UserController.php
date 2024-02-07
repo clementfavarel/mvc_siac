@@ -87,6 +87,7 @@ class UserController
     // output: @return void
     private function showMap()
     {
+        $artistsData = $this->artistModel->getAllArtists();
         // Example: Display the user map
         // You can implement logic and load the corresponding view
         include(__DIR__ . '/../views/app/map.php');

@@ -27,99 +27,20 @@
                 <button class="btn_close" id="closePopupArtistList"><img src="assets/icons/close.svg" alt="Bouton fermer">
                 </button>
                 <div class="masonry">
-
-
-                    <div class="brick">
-                        <div class="content-wrapper">
-                            <img src="assets/img/aklarousse/cocotte-barcelone.jpeg" alt="#">
-                            <div class="text-container">
-                                <h2 class="span">Nom de l'artiste</h2>
+                    <?php foreach ($artistsData as $artistData) : ?>
+                        <div class="brick">
+                            <div class="content-wrapper">
+                                <!-- Display artist image -->
+                                <img src="<?php echo $artistData['aw_src']; ?>" alt="<?php echo $artistData['artist_id']; ?>">
+                                <div class="text-container">
+                                    <!-- Display artist name -->
+                                    <h2 class="span"><?php echo $artistData['pseudo']; ?></h2>
+                                    <!-- Link to artist page -->
+                                    <a href="index.php?action=artist&artist_id=<?php echo $artistData['artist_id']; ?>">View Artist</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="brick">
-                        <div class="content-wrapper">
-                            <img src="assets/img/aklarousse/cocotte-barcelone.jpeg" alt="#">
-                            <div class="text-container">
-                                <h2 class="span">Nom de l'artiste</h2>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="brick">
-                        <div class="content-wrapper">
-                            <img src="assets/img/aklarousse/cocotte-barcelone.jpeg" alt="#">
-                            <div class="text-container">
-                                <h2 class="span">Nom de l'artiste</h2>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="brick">
-                        <div class="content-wrapper">
-                            <img src="assets/img/aklarousse/cocotte-barcelone.jpeg" alt="#">
-                            <div class="text-container">
-                                <h2 class="span">Nom de l'artiste</h2>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="brick">
-                        <div class="content-wrapper">
-                            <img src="assets/img/aklarousse/cocotte-barcelone.jpeg" alt="#">
-                            <div class="text-container">
-                                <h2 class="span">Nom de l'artiste</h2>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="brick">
-                        <div class="content-wrapper">
-                            <img src="assets/img/aklarousse/cocotte-barcelone.jpeg" alt="#">
-                            <div class="text-container">
-                                <h2 class="span">Nom de l'artiste</h2>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="brick">
-                        <div class="content-wrapper">
-                            <img src="assets/img/aklarousse/cocotte-barcelone.jpeg" alt="#">
-                            <div class="text-container">
-                                <h2 class="span">Nom de l'artiste</h2>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="brick">
-                        <div class="content-wrapper">
-                            <img src="assets/img/aklarousse/cocotte-barcelone.jpeg" alt="#">
-                            <div class="text-container">
-                                <h2 class="span">Nom de l'artiste</h2>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="brick">
-                        <div class="content-wrapper">
-                            <img src="assets/img/aklarousse/cocotte-barcelone.jpeg" alt="#">
-                            <div class="text-container">
-                                <h2 class="span">Nom de l'artiste</h2>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="brick">
-                        <div class="content-wrapper">
-                            <img src="assets/img/aklarousse/cocotte-barcelone.jpeg" alt="#">
-                            <div class="text-container">
-                                <h2 class="span">Nom de l'artiste</h2>
-                            </div>
-                        </div>
-                    </div>
-
-
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
