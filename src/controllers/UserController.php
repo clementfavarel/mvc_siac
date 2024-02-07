@@ -7,6 +7,8 @@ require_once(__DIR__ . '/../models/User.php');
 require_once(__DIR__ . '/../models/Artwork.php');
 // Include the Artist model
 require_once(__DIR__ . '/../models/Artist.php');
+// Include the Like model
+require_once(__DIR__ . '/../models/Like.php');
 
 class UserController
 {
@@ -16,6 +18,8 @@ class UserController
     private $artworkModel;
     // Artist model instance
     private $artistModel;
+    // Like model instance
+    private $likeModel;
 
     public function __construct()
     {
@@ -25,6 +29,8 @@ class UserController
         $this->artworkModel = new Artwork();
         // Initialize the Artist model
         $this->artistModel = new Artist();
+        // Initialize the Like model
+        $this->likeModel = new Like();
     }
 
     // Handle different user actions based on the provided action in the url
@@ -76,6 +82,7 @@ class UserController
                 session_destroy();
                 header('Location: index.php');
                 break;
+
             case 'add_like':
                 $this->addLike();
                 break;
@@ -117,16 +124,8 @@ class UserController
     public function addLike()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Vérifier si l'utilisateur est connecté
-            if (!isset($_SESSION['user_id'])) {
-                // Si l'utilisateur n'est pas connecté, renvoyer une erreur
-                http_response_code(401); // Unauthorized
-                echo json_encode(array('message' => 'Unauthorized'));
-                exit();
-            }
-
             // Vérifier si l'ID de l'œuvre est fourni dans la requête POST
-            if (!isset($_POST['oeuvre_id'])) {
+            if (!isset($_POST['artwork_id'])) {
                 // Si l'ID de l'œuvre n'est pas fourni, renvoyer une erreur
                 http_response_code(400); // Bad Request
                 echo json_encode(array('message' => 'Oeuvre ID is missing'));
@@ -134,14 +133,23 @@ class UserController
             }
 
             // Récupérer l'ID de l'œuvre depuis la requête POST
-            $oeuvreId = $_POST['oeuvre_id'];
+            $oeuvreId = $_POST['artwork_id'];
 
-            // Ajouter le code pour ajouter l'ID de l'œuvre aux favoris de l'utilisateur dans la base de données
-            // (Utilisez votre logique pour ajouter l'œuvre aux favoris)
+            // Ajouter l'œuvre aux favoris de l'utilisateur
+            $result = $this->likeModel->addLike($_SESSION['user'], $oeuvreId);
 
-            // Envoyer une réponse JSON pour indiquer que l'œuvre a été ajoutée aux favoris avec succès
-            http_response_code(200); // OK
-            echo json_encode(array('message' => 'Oeuvre ajoutée aux favoris avec succès'));
+            if (!$result) {
+                // Si l'œuvre n'a pas pu être ajoutée aux favoris, renvoyer une erreur
+                http_response_code(500); // Internal Server Error
+                echo json_encode(array('message' => 'Internal Server Error'));
+                exit();
+            } else {
+                // Si l'œuvre a été ajoutée avec succès aux favoris, renvoyer une réponse
+                http_response_code(200); // OK
+                echo json_encode(array('message' => 'Artwork added to favorites'));
+                exit();
+            }
+
             exit();
         } else {
             // Si la méthode de la requête n'est pas POST, renvoyer une erreur
