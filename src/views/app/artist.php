@@ -63,84 +63,84 @@
             <hr class="small">
             <hr class="big">
         </div>
+    
+        <div class="artwork">
+            <h2 class="aw-title"><?= $artworkData['title'] ?></h2>
+            <p class="aw-size">Format :<?= $artworkData['size'] ?></p> <!-- Format de l'oeuvre -->
+            <img class="artwork-img" src="<?= $artworkData['image_src'] ?>" alt="<?= $artworkData['image_alt'] ?>"/>
+        </div>
+
+
+        <section id="audio">
+            <div class="message-immersion">
+                <p>Immergez-vous dans l'oeuvre...</p>
+            </div>
+            <audio src="<?= $artworkData['audio'] ?>" controls preload="auto">
+                Votre navigateur ne semble pas supporter ce fichier.
+            </audio>
+        </section>
+
+
+        <div class="anecdote"></div>
+        <h2 class="aw-title">ses oeuvres</h2>
+
+        <section class="lazy slider" id="adjustableSlider2">
+            <div class="see-also">
+                <img class="artworks-img" src="assets/img/aklarousse/lilith.png" alt="#"/>
+                <h2>Lilith</h2>
+            </div>
+            <div class="see-also">
+                <img class="artworks-img" src="assets/img/aklarousse/la-venus-verte.png" alt="#"/>
+                <h2>La venus verte</h2>
+            </div>
+
+        </section>
+
     </div>
-    <div class="artwork">
-        <h2 class="aw-title"><?= $artworkData['title'] ?></h2>
-        <p class="aw-size">Format :<?= $artworkData['size'] ?></p> <!-- Format de l'oeuvre -->
-        <img class="artwork-img" src="<?= $artworkData['image_src'] ?>" alt="<?= $artworkData['image_alt'] ?>"/>
-    </div>
 
+    <?php include 'assets/includes/tab-bar.php'; ?>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="assets/js/slick.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/tab-bar.js"></script>
+    <script>
+        // Attendre que le document soit prêt
+        $(document).ready(function () {
+            // Sélectionner le conteneur du slider
+            const sliderContainer = $("#adjustableSlider1");
 
-    <section id="audio">
-        <div class="message-immersion">
-            <p>Immergez-vous dans l'oeuvre...</p>
-        </div>
-        <audio src="<?= $artworkData['audio'] ?>" controls preload="auto">
-            Votre navigateur ne semble pas supporter ce fichier.
-        </audio>
-    </section>
+            // Initialiser le slider avec Slick Carousel
+            sliderContainer.slick({
+                infinite: true,
+                onInit: function () {
+                    adjustSliderHeight();
+                }
+            });
 
-
-    <div class="anecdote"></div>
-    <h2 class="aw-title">ses oeuvres</h2>
-
-    <section class="lazy slider" id="adjustableSlider2">
-        <div class="see-also">
-            <img class="artworks-img" src="assets/img/aklarousse/lilith.png" alt="#"/>
-            <h2>Lilith</h2>
-        </div>
-        <div class="see-also">
-            <img class="artworks-img" src="assets/img/aklarousse/la-venus-verte.png" alt="#"/>
-            <h2>La venus verte</h2>
-        </div>
-
-    </section>
-
-</div>
-
-<?php include 'assets/includes/tab-bar.php'; ?>
-<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-<script src="assets/js/slick.js" type="text/javascript" charset="utf-8"></script>
-<script src="assets/js/tab-bar.js"></script>
-<script>
-    // Attendre que le document soit prêt
-    $(document).ready(function () {
-        // Sélectionner le conteneur du slider
-        const sliderContainer = $("#adjustableSlider1");
-
-        // Initialiser le slider avec Slick Carousel
-        sliderContainer.slick({
-            infinite: true,
-            onInit: function () {
+            // Écouter l'événement afterChange
+            sliderContainer.on('afterChange', function (event, slick, currentSlide) {
+                // Réajuster la hauteur du conteneur du slider avec une animation
                 adjustSliderHeight();
+            });
+
+            // Fonction pour ajuster la hauteur du conteneur du slider
+            function adjustSliderHeight() {
+                // Obtenir la hauteur de la slide actuelle
+                let currentSlideHeight = sliderContainer.find('.slick-current').height();
+
+                // Appliquer la hauteur au conteneur du slider avec une animation
+                sliderContainer.height(currentSlideHeight);
             }
+
+            // Sélectionner le conteneur du second slider
+            const sliderContainer2 = $("#adjustableSlider2");
+
+            sliderContainer2.slick({
+                infinite: true
+            });
         });
 
-        // Écouter l'événement afterChange
-        sliderContainer.on('afterChange', function (event, slick, currentSlide) {
-            // Réajuster la hauteur du conteneur du slider avec une animation
-            adjustSliderHeight();
-        });
 
-        // Fonction pour ajuster la hauteur du conteneur du slider
-        function adjustSliderHeight() {
-            // Obtenir la hauteur de la slide actuelle
-            let currentSlideHeight = sliderContainer.find('.slick-current').height();
-
-            // Appliquer la hauteur au conteneur du slider avec une animation
-            sliderContainer.height(currentSlideHeight);
-        }
-
-        // Sélectionner le conteneur du second slider
-        const sliderContainer2 = $("#adjustableSlider2");
-
-        sliderContainer2.slick({
-            infinite: true
-        });
-    });
-
-
-</script>
+    </script>
 </body>
 
 </html>
