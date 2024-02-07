@@ -24,7 +24,7 @@
             <h3>Stand n°<?= $artistData['num_stand'] ?></h3>
         </header>
         <div class="profile">
-            <img class="picture" src="<?= $artworkData['image_src'] ?>" alt="Photo de <?= $artworkData['title'] ?>"/>
+            <img class="picture" src="assets/img/<?= $artworkData['image_src'] ?>" alt="Photo de <?= $artworkData['title'] ?>"/>
             <h2 class="aw-title"><?= $artworkData['title'] ?></h2>
             <h1 class="at-name">de <?= $artistData['pseudo'] ?></h1>
         </div>
@@ -63,11 +63,11 @@
             <hr class="small">
             <hr class="big">
         </div>
-    
+
         <div class="artwork">
             <h2 class="aw-title"><?= $artworkData['title'] ?></h2>
-            <p class="aw-size">Format :<?= $artworkData['size'] ?></p> <!-- Format de l'oeuvre -->
-            <img class="artwork-img" src="<?= $artworkData['image_src'] ?>" alt="<?= $artworkData['image_alt'] ?>"/>
+            <p class="aw-size">Format :<?= $artworkData['size'] ?></p>
+            <img class="artwork-img" src="assets/img/<?= $artworkData['image_src'] ?>" alt="<?= $artworkData['image_alt'] ?>"/>
         </div>
 
 
@@ -75,7 +75,7 @@
             <div class="message-immersion">
                 <p>Immergez-vous dans l'oeuvre...</p>
             </div>
-            <audio src="<?= $artworkData['audio'] ?>" controls preload="auto">
+            <audio src="assets/img/<?= $artistData['audio'] ?>" controls controlsList="nodownload" preload="auto">
                 Votre navigateur ne semble pas supporter ce fichier.
             </audio>
         </section>
@@ -83,6 +83,20 @@
 
         <div class="anecdote"></div>
         <h2 class="aw-title">ses oeuvres</h2>
+
+        <section class="lazy slider" id="adjustableSlider2">
+            <?php
+
+            foreach ($imagesData as $image) {
+                ?>
+                <div class="see-also">
+                    <img class="artworks-img" src="assets/img/<?php echo $image['src']; ?>" alt="<?php echo $image['alt']; ?>"/>
+                    <h2><?php echo $image['title']; ?></h2>
+                </div>
+                <?php
+            }
+            ?>
+        </section>
 
         <section class="lazy slider" id="adjustableSlider2">
             <div class="see-also">
@@ -138,8 +152,6 @@
                 infinite: true
             });
         });
-
-
     </script>
 </body>
 
