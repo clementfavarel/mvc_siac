@@ -157,6 +157,7 @@ h2 {
 .content-wrapper img {
     width: 100%;
     display: block;
+    aspect-ratio: 1/1;
 }
 
 /* Text container for headings */
