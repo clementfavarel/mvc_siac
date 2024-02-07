@@ -76,6 +76,9 @@ class UserController
                 session_destroy();
                 header('Location: index.php');
                 break;
+            case 'add_like':
+                $this->addLike();
+                brake
 
             default:
                 $this->showError();
@@ -111,6 +114,43 @@ class UserController
         include(__DIR__ . '/../views/app/likes.php');
     }
 
+    public function addLike()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Vérifier si l'utilisateur est connecté
+            if (!isset($_SESSION['user_id'])) {
+                // Si l'utilisateur n'est pas connecté, renvoyer une erreur
+                http_response_code(401); // Unauthorized
+                echo json_encode(array('message' => 'Unauthorized'));
+                exit();
+            }
+
+            // Vérifier si l'ID de l'œuvre est fourni dans la requête POST
+            if (!isset($_POST['oeuvre_id'])) {
+                // Si l'ID de l'œuvre n'est pas fourni, renvoyer une erreur
+                http_response_code(400); // Bad Request
+                echo json_encode(array('message' => 'Oeuvre ID is missing'));
+                exit();
+            }
+
+            // Récupérer l'ID de l'œuvre depuis la requête POST
+            $oeuvreId = $_POST['oeuvre_id'];
+
+            // Ajouter le code pour ajouter l'ID de l'œuvre aux favoris de l'utilisateur dans la base de données
+            // (Utilisez votre logique pour ajouter l'œuvre aux favoris)
+
+            // Envoyer une réponse JSON pour indiquer que l'œuvre a été ajoutée aux favoris avec succès
+            http_response_code(200); // OK
+            echo json_encode(array('message' => 'Oeuvre ajoutée aux favoris avec succès'));
+            exit();
+        } else {
+            // Si la méthode de la requête n'est pas POST, renvoyer une erreur
+            http_response_code(405); // Method Not Allowed
+            echo json_encode(array('message' => 'Method Not Allowed'));
+            exit();
+        }
+    }
+    
     // Display the user profile page
     // input: @param int $userId
     // output: @return void

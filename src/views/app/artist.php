@@ -137,6 +137,10 @@
 
         </section>
 
+        <div class="floating-button">
+            <button><img src="assets/icons/heart.svg" alt="heart"></button>
+        </div>
+
     </div>
 </div>
 
