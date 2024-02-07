@@ -38,6 +38,10 @@ if (isset($_SESSION['user_role'])) {
             break;
     }
 
+    if ($action === '') {
+        include(__DIR__ . '/views/app/map.php');
+    }
+
     // Check if the user wants to log out
     if ($action === 'logout') {
         $authController = new AuthController();
