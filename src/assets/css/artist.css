@@ -358,6 +358,7 @@ hr {
     font-size: 16px;
     line-height: 23px;
 }
+
 .feedback h3 {
     margin-top: 15px;
     font-size: 20px;
@@ -365,8 +366,21 @@ hr {
     text-align: center;
 }
 
+.feedback textarea {
+    margin-top: 15px;
+    width: 100%;
+    height: 5rem;
+    resize: none;
+    border-radius: 20px;
+    border: 10px solid transparent;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+}
 
-
+.feedback textarea::placeholder {
+    text-align: center;
+    font-family: "Inter", sans-serif;
+}
 
 
 .floating-button {

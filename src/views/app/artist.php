@@ -103,6 +103,9 @@
                 tableau, d’autres font référence aux univers de science-fiction ou encore aux romans de George
                 Orwell.</p>
             <h3>Que ressentez-vous fasse à cette oeuvre ?</h3>
+            <div class="textarea-container">
+                <textarea id="myTextarea" class="center-placeholder" placeholder="Taper du texte"></textarea>
+            </div>
         </section>
         <!-- FIN SECTION RESSENTI VISITEUR -->
 
