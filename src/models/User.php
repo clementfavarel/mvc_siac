@@ -112,6 +112,13 @@ class User
         $user_email = $_POST['user_email'];
         $user_pwd = $_POST['user_pwd'];
 
+        if (empty($user_pwd)) {
+            $user = $this->getUserById($user_id);
+            $user_pwd = $user['user_pwd'];
+        } else {
+            $user_pwd = password_hash($user_pwd, PASSWORD_DEFAULT);
+        }
+
         // Update user
         $query = "UPDATE users SET user_firstname = :user_firstname, user_lastname = :user_lastname, user_job = :user_job, user_email = :user_email, user_pwd = :user_pwd WHERE user_id = :user_id";
         $this->db->query($query);
@@ -122,5 +129,6 @@ class User
         $this->db->bind(':user_pwd', $user_pwd);
         $this->db->bind(':user_id', $user_id);
         $this->db->execute();
+        return true;
     }
 }

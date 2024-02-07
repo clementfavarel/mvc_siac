@@ -65,7 +65,7 @@ class UserController
                 $user_data = $this->userModel->updateUser($user_id);
                 if ($user_data) {
                     // Redirect to the user profile page
-                    header('Location: /user/profile');
+                    header('Location: index.php?action=profile');
                 } else {
                     // Handle the case when user update fails
                     $this->showError();
