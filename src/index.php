@@ -13,7 +13,7 @@ require_once(__DIR__ . '/controllers/UserController.php');
 require_once(__DIR__ . '/controllers/AdminController.php');
 
 // Get the current action from the URL
-$action = isset($_GET['action']) ? $_GET['action'] : 'default';
+$action = isset($_GET['action']) ? $_GET['action'] : 'map';
 
 // Check if the user is logged in
 if (isset($_SESSION['user_role'])) {
@@ -32,14 +32,14 @@ if (isset($_SESSION['user_role'])) {
             $adminController->handleAction($action);
             break;
 
+        case 'map':
+            include(__DIR__ . '/views/app/map.php');
+            break;
+
         default:
             $authController = new AuthController();
             $authController->showUnauthorized();
             break;
-    }
-
-    if ($action === '') {
-        include(__DIR__ . '/views/app/map.php');
     }
 
     // Check if the user wants to log out
