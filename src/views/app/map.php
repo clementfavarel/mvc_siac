@@ -22,7 +22,7 @@
         <iframe style="height: 100%; width: 100%" title="Map Siac" frameborder="0" allowfullscreen
                 mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking"
                 xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share
-                src="https://sketchfab.com/models/068c42c580764cfbb1e4423cd636c40d/embed?autostart=1&camera=0"></iframe>
+                src="https://sketchfab.com/models/15b6ebf9952449dea76d1177da06be6f/embed?autostart=1&camera=0"></iframe>
     </div>
 </div>
 

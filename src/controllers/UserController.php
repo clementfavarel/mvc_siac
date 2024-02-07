@@ -78,7 +78,7 @@ class UserController
                 break;
             case 'add_like':
                 $this->addLike();
-                brake
+                break;
 
             default:
                 $this->showError();
@@ -150,7 +150,7 @@ class UserController
             exit();
         }
     }
-    
+
     // Display the user profile page
     // input: @param int $userId
     // output: @return void
