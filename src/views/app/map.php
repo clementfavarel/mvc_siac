@@ -41,7 +41,7 @@
                                      alt="<?php echo $artistData['artist_id']; ?>">
                                 <div class="text-container">
                                     <!-- Display artist name -->
-                                    <h2 class="span"><?php echo $artistData['pseudo']; ?></h2>
+                                    <h2><?php echo $artistData['pseudo']; ?></h2>
                                 </div>
                             </div>
                         </div>

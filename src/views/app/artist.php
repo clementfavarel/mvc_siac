@@ -90,20 +90,24 @@
             <!-- FIN SECTION AUDIO IMMERSION -->
 
             <!-- SECTION RESSENTI VISITEUR -->
-            <section class="feedback">
-                <h2>Et vous ?</h2>
-                <p>Certains font part à l’artiste d’un ressenti de nostalgie, d’apaisement ou encore d’espoir face au
-                    tableau, d’autres font référence aux univers de science-fiction ou encore aux romans de George
-                    Orwell.</p>
-                <h3>Que ressentez-vous fasse à cette oeuvre ?</h3>
-                <div class="textarea-container">
-                    <textarea placeholder="Taper du texte"></textarea>
-                </div>
-            </section>
+            <?php if ($artistData['feedback-check']): ?>
+                <section class="feedback">
+                    <h2>Et vous ?</h2>
+                    <p><?= $artistData['feedback-text'] ?></p>
+                    <h3><?= $artistData['feedback-question'] ?></h3>
+                    <div class="textarea-container">
+                        <textarea placeholder="Taper du texte"></textarea>
+                    </div>
+                </section>
+            <?php endif; ?>
+
             <!-- FIN SECTION RESSENTI VISITEUR -->
 
+            <!-- SECTION CAROUSEL AUTRES OEUVRES AUTEURS -->
+            <div class="anecdote">
 
-            <div class="anecdote"></div>
+            </div>
+
             <h2 class="aw-title">ses oeuvres</h2>
 
             <section class="lazy slider" id="adjustableSlider2">
@@ -116,6 +120,8 @@
                     <h2><?= $artistData['img_2-title'] ?></h2>
                 </div>
             </section>
+
+            <!-- FIN SECTION CAROUSEL AUTRES OEUVRES AUTEURS -->
 
             <div class="floating-button">
                 <button id="add-like-btn"><img src="assets/icons/heart.svg" alt="heart"></button>

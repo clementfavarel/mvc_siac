@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
 *,
 *::before,
 *::after {
@@ -6,10 +7,12 @@
     margin: 0;
     padding: 0;
 }
+
 html,
 body {
     height: 100%;
 }
+
 body {
     height: 100vh;
     display: grid;
@@ -19,6 +22,7 @@ body {
     color: #030303;
     background-color: #333;
 }
+
 .top-bar {
     display: flex;
     align-items: flex-end;
@@ -26,15 +30,19 @@ body {
     width: 100%;
     padding: 0 25px;
 }
+
 .logo {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .mapollon {
     width: 36px;
     height: 36px;
 }
+
+
 .filters {
     cursor: pointer;
     width: 36px;
@@ -43,9 +51,11 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .map-container {
     padding-top: 1rem;
 }
+
 .pin-icon {
     width: 24px;
     height: 24px;
@@ -96,20 +106,6 @@ body {
     width: 37px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .top-bar {
     display: flex;
     align-items: flex-end;
@@ -126,18 +122,14 @@ body {
     text-align: center;
 }
 
-h2 {
-    font-size: 14px;
-}
-
-
-
-
 /* Masonry grid */
 .masonry {
     column-gap: 30px;
     column-fill: initial;
+}
 
+.masonry a {
+    text-decoration: none;
 }
 
 /* Masonry item */
@@ -151,6 +143,11 @@ h2 {
 /* Content wrapper for image and text */
 .content-wrapper {
     position: relative;
+}
+
+.content-wrapper h2 {
+    font-size: 14px;
+    color: #000;
 }
 
 /* Image inside content wrapper */
