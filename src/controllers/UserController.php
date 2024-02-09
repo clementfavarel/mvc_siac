@@ -124,40 +124,48 @@ class UserController
     public function addLike()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Vérifier si l'ID de l'œuvre est fourni dans la requête POST
-            if (!isset($_POST['artwork_id'])) {
-                // Si l'ID de l'œuvre n'est pas fourni, renvoyer une erreur
+            // Check if the artist_id is provided in the POST request
+            if (!isset($_POST['artist_id'])) {
                 http_response_code(400); // Bad Request
-                echo json_encode(array('message' => 'Oeuvre ID is missing'));
+                echo json_encode(array('message' => 'Artist ID is missing'));
                 exit();
             }
 
-            // Récupérer l'ID de l'œuvre depuis la requête POST
-            $oeuvreId = $_POST['artwork_id'];
+            // Retrieve the artist ID from the POST request
+            $artistId = $_POST['artist_id'];
 
-            // Ajouter l'œuvre aux favoris de l'utilisateur
-            $result = $this->likeModel->addLike($_SESSION['user'], $oeuvreId);
+            // Check if the artist is already in favorites for the logged-in user
+            $isLiked = $this->likeModel->isLiked($_SESSION['user'], $artistId);
+
+            if ($isLiked) {
+                // If the artist is already in favorites, remove it
+                $result = $this->likeModel->removeLike($_SESSION['user'], $artistId);
+                $message = 'Artist removed from favorites';
+            } else {
+                // If the artist is not in favorites, add it
+                $result = $this->likeModel->addLike($_SESSION['user'], $artistId);
+                $message = 'Artist added to favorites';
+            }
 
             if (!$result) {
-                // Si l'œuvre n'a pas pu être ajoutée aux favoris, renvoyer une erreur
+                // If there was an error adding/removing the artist from favorites
                 http_response_code(500); // Internal Server Error
-                echo json_encode(array('message' => 'Internal Server Error'));
-                exit();
-            } else {
-                // Si l'œuvre a été ajoutée avec succès aux favoris, renvoyer une réponse
-                http_response_code(200); // OK
-                echo json_encode(array('message' => 'Artwork added to favorites'));
+                echo json_encode(array('message' => 'Failed to update favorites'));
                 exit();
             }
 
+            // Success response
+            http_response_code(200); // OK
+            echo json_encode(array('message' => $message));
             exit();
         } else {
-            // Si la méthode de la requête n'est pas POST, renvoyer une erreur
+            // If the request method is not POST
             http_response_code(405); // Method Not Allowed
             echo json_encode(array('message' => 'Method Not Allowed'));
             exit();
         }
     }
+
 
     // Display the user profile page
     // input: @param int $userId

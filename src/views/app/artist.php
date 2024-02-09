@@ -7,7 +7,6 @@
     <title>Artiste | Mapollon</title>
     <link rel="stylesheet" href="assets/css/artist.css" />
     <link rel="stylesheet" href="assets/css/tab-bar.css" />
-    <script src="assets/js/ajax.js" defer></script>
 </head>
 
 <body>
@@ -90,7 +89,7 @@
             <!-- FIN SECTION AUDIO IMMERSION -->
 
             <!-- SECTION RESSENTI VISITEUR -->
-            <?php if ($artistData['feedback-check']): ?>
+            <?php if ($artistData['feedback-check']) : ?>
                 <section class="feedback">
                     <h2>Et vous ?</h2>
                     <p><?= $artistData['feedback-text'] ?></p>
@@ -124,9 +123,10 @@
             <!-- FIN SECTION CAROUSEL AUTRES OEUVRES AUTEURS -->
 
             <div class="floating-button">
-                <button id="add-like-btn"><img src="assets/icons/heart.svg" alt="heart"></button>
+                <button id="add-like-btn" data-artist-id="<?= $artistData['artist_id'] ?>">
+                    <img src="assets/icons/heart.svg" alt="heart">
+                </button>
             </div>
-
         </div>
     </div>
 
