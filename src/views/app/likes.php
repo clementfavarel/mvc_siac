@@ -13,6 +13,10 @@
 
 <body>
 
+<div class="user-banner">
+    <h2>Favoris</h2>
+</div>
+
 <div class="container">
     <div class="wrapper">
         <div class="masonry">

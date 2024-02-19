@@ -30,10 +30,14 @@
     </div>
 
     <div class="popup" id="popupArtistList">
-        <div class="popup-content rounded-lg">
-            <div class="wrapper">
-                <button class="btn_close" id="closePopupArtistList"><img src="assets/icons/close.svg" alt="Bouton fermer">
-                </button>
+        <div class="popup-content">
+
+            <div class="user-banner">
+                <h2>Artistes par liste</h2>
+                <button class="btn_close" id="closePopupArtistList"><img src="assets/icons/close.svg" alt="Bouton fermer"></button>
+            </div>
+
+            <div class="wrapper" style="padding: 5rem 1rem;">
                 <div class="masonry">
                     <?php foreach ($artistsData as $artistData) : ?>
                         <a href="index.php?action=artist&artist_id=<?php echo $artistData['artist_id']; ?>">
