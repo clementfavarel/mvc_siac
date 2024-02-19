@@ -13,7 +13,7 @@ require_once(__DIR__ . '/controllers/UserController.php');
 require_once(__DIR__ . '/controllers/AdminController.php');
 
 // Get the current action from the URL
-$action = isset($_GET['action']) ? $_GET['action'] : 'map';
+$action = isset($_GET['action']) ? $_GET['action'] : 'index';
 
 // Check if the user is logged in
 if (isset($_SESSION['user_role'])) {
